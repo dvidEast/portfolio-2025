@@ -15,13 +15,11 @@ export default function Home() {
     <div
       className={`${karla.className}`}
     >
-      <Navbar />
-
       <Hero />
 
       <Border sectionTitle="TIMELINE" textOnLeft={true}/>
       
-      <Timeline />
+      {/* <Timeline /> */}
 
       <Border sectionTitle="TECHNICAL SKILLS" textOnLeft={true}/>
       
