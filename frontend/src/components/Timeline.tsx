@@ -22,14 +22,22 @@ export default function Timeline() {
             subtitle: "DraapeAI (Startup)",
             date: "2024 – 2024",
             bulletColor: "bg-pink-400",
-            details: [],
+            details: [
+                "Engineered a machine learning model to automate garment pattern generation, reducing manual labor by 60%.",
+                "Built a computer vision system to estimate body measurements from user-submitted images with 92% average accuracy.",
+                "Developed a mobile app in React Native to capture user images and deliver personalized pattern previews, enabling real-time feedback and enhancing the user experience.",
+                "Created an interactive web application in TypeScript and React, integrating the pattern generation ML model for end-to-end usage across mobile and web applications."
+            ],
         },
         {
             title: "DEVELOPMENT LEAD",
             subtitle: "UBC Science Undergraduate Society",
             date: "2024 – 2024",
             bulletColor: "bg-blue-400",
-            details: [],
+            details: [
+                "Led a team of 6 developers in building and maintaining the organization’s website using React (Next.js) in TypeScript, and Tailwind CSS, ensuring seamless functionality and modern UI/UX, providing accessibility and learning resources used by over 16,000 UBC undergraduate science students.",
+                "Transitioned from Wordpress to a modular, component-driven React-based web application, utilizing React Hooks and Context API for state management, resulting in a 30% increase in user engagement."
+            ],
         },
         {
             title: "SOFTWARE DEVELOPER",
