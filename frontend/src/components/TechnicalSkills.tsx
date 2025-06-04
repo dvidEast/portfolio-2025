@@ -1,3 +1,4 @@
+import React from "react";
 import Border from "./Border"
 
 export default function TechnicalSkills() {
@@ -51,10 +52,10 @@ export default function TechnicalSkills() {
                         {/* Skill Items */}
                         <div className="flex flex-wrap gap-x-2 text-gray-300">
                         {skill.list.map((item, index) => (
-                            <>
+                            <React.Fragment key={item}>
                                 {index !== 0 && <span className="text-gray-500">/</span>}
                                 <span className="whitespace-nowrap">{item}</span>
-                            </>
+                            </React.Fragment>
                         ))}
                         </div>
                     </div>
