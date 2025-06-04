@@ -32,7 +32,7 @@ export default function Timeline() {
         {
             title: "DEVELOPMENT LEAD",
             subtitle: "UBC Science Undergraduate Society",
-            date: "2024 – 2024",
+            date: "2024 – 2025",
             bulletColor: "bg-blue-400",
             details: [
                 "Led a team of 6 developers in building and maintaining the organization’s website using React (Next.js) in TypeScript, and Tailwind CSS, ensuring seamless functionality and modern UI/UX, providing accessibility and learning resources used by over 16,000 UBC undergraduate science students.",
