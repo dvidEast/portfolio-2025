@@ -57,7 +57,7 @@ export default function Hackathons() {
 
     return(
         <main>
-            <Border sectionTitle="HACKATHONS" />
+            <Border sectionTitle="HACKATHONS" textOnLeft={false} />
 
             <section className="mt-5 mb-12 flex flex-wrap">
                 {hackathons.map((item, idx) => (
@@ -80,7 +80,7 @@ export default function Hackathons() {
                 ))}
             </section>
 
-            <Border sectionTitle="PERSONAL PROJECTS" textOnLeft={false} />
+            <Border sectionTitle="PERSONAL PROJECTS" textOnLeft={true} />
 
             <section className="mt-5 mb-12 flex flex-wrap">
                 {personalProjects.map((item, idx) => (
@@ -103,7 +103,7 @@ export default function Hackathons() {
                 ))}
             </section>
 
-            <Border sectionTitle="SCHOOL PROJECTS" />
+            <Border sectionTitle="SCHOOL PROJECTS" textOnLeft={false}/>
 
             <section className="mt-5 mb-12 flex flex-wrap">
                 {schoolProjects.map((item, idx) => (

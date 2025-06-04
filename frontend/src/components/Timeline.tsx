@@ -81,7 +81,7 @@ export default function Timeline() {
 
     return (
         <section className="w-full text-white">
-            <Border sectionTitle="TIMELINE" textOnLeft={true} />
+            <Border sectionTitle="TIMELINE" textOnLeft={false} />
 
             <div className="mt-20 max-w-5xl mx-auto px-8 mb-20">
                 <div className="relative border-l border-gray-600">

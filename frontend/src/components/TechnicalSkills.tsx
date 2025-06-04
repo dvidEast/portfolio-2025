@@ -36,7 +36,7 @@ export default function TechnicalSkills() {
 
     return (
         <section className="w-full mb-10">
-            <Border sectionTitle="TECHNICAL SKILLS" textOnLeft={false} />
+            <Border sectionTitle="TECHNICAL SKILLS" textOnLeft={true} />
 
             <div className="px-6 py-10 mt-10">
                 <div className="max-w-4xl mx-auto text-left space-y-7">
@@ -46,7 +46,7 @@ export default function TechnicalSkills() {
                         className="flex flex-col sm:flex-row sm:items-start flex-wrap gap-y-2"
                     >
                         {/* Skill Type */}
-                        <span className="sm:w-48 font-bold underline">{skill.type}</span>
+                        <span className="sm:w-48 font-bold">{skill.type}</span>
 
                         {/* Skill Items */}
                         <div className="flex flex-wrap gap-x-2 text-gray-300">

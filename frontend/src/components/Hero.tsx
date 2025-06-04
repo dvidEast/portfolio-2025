@@ -14,7 +14,7 @@ export default function Hero() {
                 <br />
 
                 <h1 className={'text-center font-bold text-4xl max-w-140 opacity-0 animate-fade-in'}>
-                    — Hi! I&apos;m David, a software developer and student @ UBC, based in Vancouver.
+                    — Hi! I&apos;m David, a software developer and student @ UBC, Vancouver.
                 </h1>
                 
                 <span className="mt-20 text-2xl inline-block rotate-90 animate-bounce-slow">{'>'}</span>
