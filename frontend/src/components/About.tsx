@@ -5,7 +5,7 @@ export default function About() {
         <>
             <Border sectionTitle="MY STORY" textOnLeft={true} />
 
-            <section className="w-full mt-15 mb-15 flex items-center justify-center">
+            <section className="w-full mt-25 mb-25 flex items-center justify-center">
                 <div className='max-w-5xl flex flex-col gap-y-7'>
                     <div className="px-6">
                         Hi, I&apos;m David 👋 

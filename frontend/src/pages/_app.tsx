@@ -7,10 +7,12 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>DAVID LIM</title>
-        <meta name="description" content="Your website description" />
+        <meta name="description" content="Personal website of David Lim" />
         <link rel="icon" href="/DL.ico" />
+
+        <meta property="og:image" content="/david_lim_image.png" />
       </Head>
       <Component {...pageProps} />
     </>
-  )
+  );
 }

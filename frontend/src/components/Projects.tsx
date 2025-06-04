@@ -1,54 +1,110 @@
 import Border from "./Border"
+import { Github, ExternalLink } from "lucide-react";
 
-export default function Hackathons() {
-    const hackathons = [
+interface ProjectListProps {
+    projects: Project[]
+    numProjects: number
+}
+
+interface Project {
+    title: string;
+    color: string;
+    image: string;
+    description: string;
+    github: string;
+    devpost?: string;
+}
+
+interface HackathonProject extends Project {
+    devpost: string; // Required for hackathons
+}
+
+interface PersonalProject extends Project {
+
+}
+
+interface SchoolProject extends Project {
+    courseCode?: string;
+}
+
+
+export default function Projects() {
+    const hackathons: HackathonProject[] = [
         {
             title: "STORMHACKS 2024",
-            color: "bg-gray-300",
-            description: "This is the first square's description.",
+            color: "bg-[#00c6ba]",
+            image: "/project_images/kings_craft.png",
+            description: "Worked on the frontend design with NextJS + firebase authentication and data population.",
+            devpost: "https://devpost.com/software/kings-craft",
+            github: "https://github.com/koh3n/KINGSCRAFT"
         },
         {
             title: "NWHACKS 2024",
-            color: "bg-pink-200",
-            description: "This is the second square's description.",
+            color: "bg-[#f9f871]",
+            image: "/project_images/panda_ai.png",
+            description: "Worked on the frontend design with Figma and React + data pipeline and backend integration with ExpressJS.",
+            devpost: "https://devpost.com/software/pandai",
+            github: "https://github.com/dvidEast/nwHacks-Panda"
         },
         {
             title: "HOOTSUITE PRODUCT CHALLENGE",
-            color: "bg-teal-500",
-            description: "This is the third square's description.",
-        },
+            color: "bg-[#f9f871]",
+            image: "/project_images/hootsuite_product_challenge.png",
+            description: "Worked on product strategy, UI/UX design in Figma, technical presentation slides, and pitch strategy.",
+            devpost: "https://devpost.com/software/hootsuite-nest",
+            github: ""
+        }
     ];
 
-    const personalProjects = [
+    const personalProjects: PersonalProject[] = [
         {
             title: "PERSONAL PORTFOLIO",
-            color: "bg-pink-300",
-            description: "This is the first square's description.",
-            link: "https://github.com/dvidEast/portfolio-2025"
+            color: "bg-[#56574e]",
+            image: "/project_images/portfolio_2025.png",
+            description: "This website - built in NextJS, TypeScript, Tailwind.",
+            github: "https://github.com/dvidEast/portfolio-2025"
         },
         {
-            title: "ID VERIFICATION API",
-            color: "bg-gray-500",
-            description: "This is the third square's description.",
-            link: "https://github.com/dvidEast/ID-Verification-API"
+            title: "SCIENCE UNDERGRADUATE SOCIETY MOCK WEBSITE",
+            color: "bg-[#c2fcf2]",
+            image: "/project_images/sus_mock.png",
+            description: "Designed for my interview in 2024 - built with NextJS and Figma.",
+            github: "https://github.com/dvidEast/ID-Verification-API"
         },
+        {
+            title: "JUST ONE DANCE",
+            color: "bg-[#ffbb90]",
+            image: "/project_images/just_dance.webp",
+            description: "In development.",
+            devpost: "",
+            github: ""
+        }
     ];
 
-    const schoolProjects = [
+    const schoolProjects: SchoolProject[] = [
         {
             title: "SAUCE THE AUX",
             color: "bg-blue-300",
-            description: "This is the first square's description.",
+            image: "/project_images/sauce_the_aux.jpg",
+            description: "Full-stack CRUD application built in Java using OOP techniques and testing with JUnit.",
+            github: "https://github.com/dvidEast/SauceTheAux",
+            courseCode: "CPSC 210 - Software Construction (OOP in Java)"
         },
         {
             title: "DONUTS",
             color: "bg-red-200",
-            description: "This is the second square's description.",
+            image: "/project_images/donuts.png",
+            description: "Full-stack PWA built in NextJS with Typescript and Node.js backend using the oracledb driver.",
+            github: "https://github.com/naijwu/donut",
+            courseCode: "CPSC 304 - Relational Databases"
         },
         {
             title: "WEATHER CLASSIFICATION",
-            color: "bg-green-500",
-            description: "This is the third square's description.",
+            color: "bg-[#c4c5bb]",
+            image: "/project_images/weather_classification.webp",
+            description: "KNN classification and analysis in R.",
+            github: "https://github.com/dvidEast/dsci_weather_classification",
+            courseCode: "DSCI 100 - Intro to Data Science (R)"
         },
     ];
 
@@ -56,72 +112,82 @@ export default function Hackathons() {
         <main>
             <Border sectionTitle="HACKATHONS" textOnLeft={false} />
 
-            <section className="mt-5 mb-12 flex flex-wrap">
-                {hackathons.map((item, idx) => (
-                    <div key={idx} className="w-1/3 flex flex-col">
-                        {/* Square box */}
-                        <div
-                            className={`relative w-[100%] pt-[100%] ${item.color} group overflow-hidden`}
-                        >
-                            {/* Hover overlay */}
-                            <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-center text-sm p-4">
-                                {item.description}
-                            </div>
-                        </div>
+            <ProjectList projects={hackathons} numProjects={hackathons.length}/>
 
-                        {/* Title below */}
-                        <div className="pl-1 text-xs mt-2">
-                            {item.title}
-                        </div>
-                    </div>
-                ))}
-            </section>
+            <Border sectionTitle="SCHOOL PROJECTS" textOnLeft={true} />
 
-            <Border sectionTitle="PERSONAL PROJECTS" textOnLeft={true} />
+            <ProjectList projects={schoolProjects} numProjects={schoolProjects.length}/>
+            
+            <Border sectionTitle="PERSONAL PROJECTS" textOnLeft={false}/>
 
-            <section className="mt-5 mb-12 flex flex-wrap">
-                {personalProjects.map((item, idx) => (
-                    <div key={idx} className="w-1/3 flex flex-col">
-                        {/* Square box */}
-                        <div
-                            className={`relative w-[100%] pt-[100%] ${item.color} group overflow-hidden`}
-                        >
-                            {/* Hover overlay */}
-                            <div className="absolute inset-0 bg-[white] bg-opacity-30 opacity-0 group-hover:opacity-70 transition-opacity duration-200 flex items-center justify-center text-[#292a2c] text-center text-sm p-4">
-                                {item.description}
-                            </div>
-                        </div>
+            <ProjectList projects={personalProjects} numProjects={personalProjects.length} />
 
-                        {/* Title below */}
-                        <div className="pl-1 text-xs mt-2">
-                            {item.title}
-                        </div>
-                    </div>
-                ))}
-            </section>
-
-            <Border sectionTitle="SCHOOL PROJECTS" textOnLeft={false}/>
-
-            <section className="mt-5 mb-12 flex flex-wrap">
-                {schoolProjects.map((item, idx) => (
-                    <div key={idx} className="w-1/3 flex flex-col">
-                        {/* Square box */}
-                        <div
-                            className={`relative w-[100%] pt-[100%] ${item.color} group overflow-hidden`}
-                        >
-                            {/* Hover overlay */}
-                            <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-center text-sm p-4">
-                                {item.description}
-                            </div>
-                        </div>
-
-                        {/* Title below */}
-                        <div className="pl-1 text-xs mt-2">
-                            {item.title}
-                        </div>
-                    </div>
-                ))}
-            </section>
         </main>
+    )
+}
+
+function ProjectList({
+    projects,
+    numProjects
+} : ProjectListProps) {
+    return (
+        <section className="mt-15 mb-25 flex flex-wrap">
+            {projects.map((item, idx) => (
+                <div key={idx} className={`w-1/${numProjects} flex flex-col`}>
+                    {/* Square box */}
+                    <div
+                        className={`relative w-full pt-[100%] group overflow-hidden`}
+                    >
+                        {/* Image filling the square */}
+                        <img
+                            src={item.image} 
+                            alt={item.title}
+                            className="absolute inset-0 w-full h-full object-cover"
+                        />
+
+                        <div
+                            className={`absolute inset-0 ${item.color} opacity-80 pointer-events-none`}
+                        />
+
+
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 bg-[white] bg-opacity-30 opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-center items-center text-black text-center p-4">
+                            {/* Description */}
+                            <p className="mb-4 text-sm">{item.description}</p>
+
+                            {/* Button Row */}
+                            <div className="flex flex-row gap-6">
+                                {/* GitHub */}
+                                {item.github && (
+                                <a
+                                    href={item.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="relative group"
+                                >
+                                    <Github className="w-6 h-6 hover:text-gray-300 cursor-pointer transition" />
+                                </a>
+                                )}
+
+                                {/* Devpost */}
+                                {item.devpost && (
+                                <a
+                                    href={item.devpost}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="relative group"
+                                >
+                                    <ExternalLink className="w-6 h-6 hover:text-gray-300 cursor-pointer transition" />
+                                </a>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Title below */}
+                    <div className="pl-1 text-xs mt-2">{item.title}</div>
+                </div>
+            ))}
+        </section>
     )
 }
