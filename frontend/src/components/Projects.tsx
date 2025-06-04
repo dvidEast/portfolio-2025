@@ -24,16 +24,13 @@ export default function Hackathons() {
             title: "PERSONAL PORTFOLIO",
             color: "bg-pink-300",
             description: "This is the first square's description.",
-        },
-        {
-            title: "HEALTH DASHBOARD",
-            color: "bg-yellow-200",
-            description: "This is the second square's description.",
+            link: "https://github.com/dvidEast/portfolio-2025"
         },
         {
             title: "ID VERIFICATION API",
             color: "bg-gray-500",
             description: "This is the third square's description.",
+            link: "https://github.com/dvidEast/ID-Verification-API"
         },
     ];
 
@@ -90,7 +87,7 @@ export default function Hackathons() {
                             className={`relative w-[100%] pt-[100%] ${item.color} group overflow-hidden`}
                         >
                             {/* Hover overlay */}
-                            <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-center text-sm p-4">
+                            <div className="absolute inset-0 bg-[white] bg-opacity-30 opacity-0 group-hover:opacity-70 transition-opacity duration-200 flex items-center justify-center text-[#292a2c] text-center text-sm p-4">
                                 {item.description}
                             </div>
                         </div>
