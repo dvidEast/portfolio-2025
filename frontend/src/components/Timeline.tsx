@@ -83,7 +83,7 @@ export default function Timeline() {
         <section className="w-full px-4 py-8 text-white">
             <Border sectionTitle="TIMELINE" textOnLeft={true} />
 
-            <div className="mt-17 max-w-5xl mx-auto pl- pr-5">
+            <div className="mt-30 max-w-5xl mx-auto pl- pr-5 mb-30">
                 <div className="relative border-l border-gray-600">
                 {timeline.map((item, index) => (
                     <div
@@ -94,31 +94,31 @@ export default function Timeline() {
                         className="ml-6 mb-12 relative timeline-item"
                         style={{ transitionDelay: `${index * 100}ms` }}
                     >
-                    {/* Bullet */}
-                    <span
-                        className={`absolute left-0 top-1.5 w-3 h-3 rounded-full ${item.bulletColor}`}
-                        style={{ transform: 'translateX(-250%)' }}
-                    />
+                        {/* Bullet */}
+                        <span
+                            className={`absolute left-0 top-1.5 w-3 h-3 rounded-full ${item.bulletColor}`}
+                            style={{ transform: 'translateX(-250%)' }}
+                        />
 
-                    {/* Content */}
-                    <div className="flex justify-between items-start gap-4">
-                        <div>
-                        <h3 className="font-bold text-lg mb-1">{item.title}</h3>
+                        {/* Content */}
+                        <div className="flex justify-between items-start gap-4">
+                            <div>
+                            <h3 className="font-bold text-lg mb-1">{item.title}</h3>
 
-                        <p className="text-sm mb-4">{item.subtitle}</p>
-                        {item.details.length > 0 && (
-                            <ul className="list-disc text-sm text-gray-400 ml-5 space-y-1">
-                            {item.details.map((detail, i) => (
-                                <li key={i}>{detail}</li>
-                            ))}
-                            </ul>
-                        )}
+                            <p className="text-sm mb-4">{item.subtitle}</p>
+                            {item.details.length > 0 && (
+                                <ul className="list-disc text-sm text-gray-300 ml-5 space-y-1">
+                                {item.details.map((detail, i) => (
+                                    <li key={i}>{detail}</li>
+                                ))}
+                                </ul>
+                            )}
+                            </div>
+
+                            <p className="text-sm text-gray-400 whitespace-nowrap">
+                            {item.date}
+                            </p>
                         </div>
-
-                        <p className="text-sm text-gray-400 whitespace-nowrap">
-                        {item.date}
-                        </p>
-                    </div>
                     </div>
                 ))}
                 </div>
