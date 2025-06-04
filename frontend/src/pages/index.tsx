@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
 import TechnicalSkills from "@/components/TechnicalSkills";
+import Hackathons from "@/components/Projects";
 
 const karla = Karla({
   subsets: ["latin"],
@@ -18,7 +19,9 @@ export default function Home() {
       <Timeline />
 
       <TechnicalSkills />
-      
+
+      <Hackathons />
+
       <Footer />
     </div>
   );

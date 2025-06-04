@@ -83,7 +83,7 @@ export default function Timeline() {
         <section className="w-full text-white">
             <Border sectionTitle="TIMELINE" textOnLeft={true} />
 
-            <div className="mt-30 max-w-5xl mx-auto px-8 mb-30">
+            <div className="mt-20 max-w-5xl mx-auto px-8 mb-20">
                 <div className="relative border-l border-gray-600">
                     {timeline.map((item, index) => (
                         <div

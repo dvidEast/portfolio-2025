@@ -46,7 +46,7 @@ export default function TechnicalSkills() {
                         className="flex flex-col sm:flex-row sm:items-start flex-wrap gap-y-2"
                     >
                         {/* Skill Type */}
-                        <span className="sm:w-48 font-bold text-white">{skill.type}</span>
+                        <span className="sm:w-48 font-bold underline">{skill.type}</span>
 
                         {/* Skill Items */}
                         <div className="flex flex-wrap gap-x-2 text-gray-300">
