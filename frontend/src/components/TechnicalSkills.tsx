@@ -35,10 +35,10 @@ export default function TechnicalSkills() {
     ]
 
     return (
-        <section className="w-full mb-20">
+        <section className="w-full mb-10">
             <Border sectionTitle="TECHNICAL SKILLS" textOnLeft={false} />
 
-            <div className="px-6 py-10 mt-20">
+            <div className="px-6 py-10 mt-10">
                 <div className="max-w-4xl mx-auto text-left space-y-7">
                     {skills.map((skill) => (
                     <div
