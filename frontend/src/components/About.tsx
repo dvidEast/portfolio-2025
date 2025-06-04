@@ -8,11 +8,11 @@ export default function About() {
             <section className="w-full mt-15 mb-15 flex items-center justify-center">
                 <div className='max-w-5xl flex flex-col gap-y-7'>
                     <div className="px-6">
-                        Hi, I'm David 👋 
+                        Hi, I&apos;m David 👋 
                     </div>
 
                     <div className="px-6">
-                        I'm currently <span className='text-[#38ad8f]'>pursuing software engineering roles</span> to build a strong technical foundation and better understand how great products are built from the ground up.
+                        I&apos;m currently <span className='text-[#38ad8f]'>pursuing software engineering roles</span> to build a strong technical foundation and better understand how great products are built from the ground up.
                     </div>
 
                     <div className="px-6">
@@ -20,7 +20,7 @@ export default function About() {
                     </div>
 
                     <div className="px-6">
-                        One of my long-term career goals is using data science and technology to <span className='text-[#cf9eab]'>address large-scale economic and societal challenges — like South Korea's declining birth rate</span> — and designing solutions that are not only functional, but sustainable and people-first.
+                        One of my long-term career goals is using data science and technology to <span className='text-[#cf9eab]'>address large-scale economic and societal challenges — like South Korea&apos;s declining birth rate</span> — and designing solutions that are not only functional, but sustainable and people-first.
                     </div>
                 </div>
             </section>
