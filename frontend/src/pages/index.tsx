@@ -1,5 +1,4 @@
 import { Karla } from "next/font/google";
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
