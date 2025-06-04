@@ -5,7 +5,7 @@ export default function Hero() {
         <>  
             <Navbar />
             <main 
-                className={`h-screen flex flex-col justify-center items-center px-4 text-center`}
+                className={`h-screen flex flex-col justify-center items-center px-4 text-center opacity-0 animate-fade-slide-in`}
             >   
                 <p className={'text-2xl'}>
                     SOFTWARE DEVELOPER
@@ -13,11 +13,11 @@ export default function Hero() {
 
                 <br />
 
-                <h1 className={'text-center font-bold text-4xl max-w-160'}>
-                    — Hi! I'm David, a software developer and student @ UBC, studying math and data science
+                <h1 className={'text-center font-bold text-4xl max-w-140 opacity-0 animate-fade-in'}>
+                    — Hi! I'm David, a software developer and student @ UBC, based in Vancouver.
                 </h1>
                 
-                <span className={'mt-50 text-2xl inline-block rotate-90'}>{'>'}</span>
+                <span className="mt-20 text-2xl inline-block rotate-90 animate-bounce-slow">{'>'}</span>
             </main>
         </>
     )
