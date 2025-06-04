@@ -17,6 +17,7 @@ export default function Hero() {
                     — Hi! I'm David, a software developer and student @ UBC, studying math and data science
                 </h1>
                 
+                <span className={'mt-50 text-2xl inline-block rotate-90'}>{'>'}</span>
             </main>
         </>
     )

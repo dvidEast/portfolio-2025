@@ -19,7 +19,7 @@ export default function Home() {
 
       <Border sectionTitle="TIMELINE" textOnLeft={true}/>
       
-      {/* <Timeline /> */}
+      <Timeline />
 
       <Border sectionTitle="TECHNICAL SKILLS" textOnLeft={true}/>
       
