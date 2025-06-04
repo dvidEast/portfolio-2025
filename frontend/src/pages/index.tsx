@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
 
-import Border from "@/components/Border";
 
 const karla = Karla({
   subsets: ["latin"],
@@ -16,14 +15,10 @@ export default function Home() {
       className={`${karla.className}`}
     >
       <Hero />
-
-      <Border sectionTitle="TIMELINE" textOnLeft={true}/>
       
       <Timeline />
-
-      <Border sectionTitle="TECHNICAL SKILLS" textOnLeft={true}/>
       
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

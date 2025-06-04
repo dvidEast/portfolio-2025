@@ -10,15 +10,15 @@ export default function Border({
     return (
         <div className={'w-full'}>
             {textOnLeft ? (
-                <div className={'flex flex-row items-center gap-3'}>
-                    <span className="whitespace-nowrap pl-3">{sectionTitle}</span>
+                <div className={'flex flex-row items-center gap-3 mb-10 mt-10'}>
+                    <span className="whitespace-nowrap">{sectionTitle}</span>
                     <div className={'flex-grow border-t w-full h-0'} />
                 </div>
                 
             ) : (
-                <div className={'w-full flex flex-row items-center gap-3'}>
+                <div className={'w-full flex flex-row items-center gap-3 mb-10 mt-10'}>
                     <div className={'flex-grow border-t w-full h-0'} />
-                    <span className="whitespace-nowrap pr-3">{sectionTitle}</span>
+                    <span className="whitespace-nowrap">{sectionTitle}</span>
                 </div>
             )}
         </div>
