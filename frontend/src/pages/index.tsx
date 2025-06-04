@@ -13,15 +13,17 @@ const karla = Karla({
 export default function Home() {
   return (
     <div
-      className={`${karla.className} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen`}
+      className={`${karla.className}`}
     >
       <Navbar />
 
       <Hero />
 
-      <Border sectionTitle="TECHNICAL SKILLS" textOnLeft={true}/>
+      <Border sectionTitle="TIMELINE" textOnLeft={true}/>
       
-      {/* <Timeline /> */}
+      <Timeline />
+
+      <Border sectionTitle="TECHNICAL SKILLS" textOnLeft={true}/>
       
       {/* <Footer /> */}
     </div>
