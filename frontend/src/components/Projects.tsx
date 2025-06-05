@@ -67,7 +67,7 @@ export default function Projects() {
             title: "SCIENCE UNDERGRADUATE SOCIETY MOCK WEBSITE",
             color: "bg-[#c2fcf2]",
             image: "/project_images/sus_mock.png",
-            description: "Designed for my interview in 2024 - built with NextJS and Figma.",
+            description: "Mock website for the Science Undergraduate Society to propose a new website - built with NextJS and Figma.",
             github: "https://github.com/dvidEast/ID-Verification-API"
         },
         {
