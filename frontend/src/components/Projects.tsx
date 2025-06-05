@@ -3,7 +3,6 @@ import { Github, ExternalLink } from "lucide-react";
 
 interface ProjectListProps {
     projects: Project[]
-    numProjects: number
 }
 
 interface Project {
@@ -48,7 +47,7 @@ export default function Projects() {
         },
         {
             title: "HOOTSUITE PRODUCT CHALLENGE",
-            color: "bg-[#f9f871]",
+            color: "bg-orange-300",
             image: "/project_images/hootsuite_product_challenge.png",
             description: "Worked on product strategy, UI/UX design in Figma, technical presentation slides, and pitch strategy.",
             devpost: "https://devpost.com/software/hootsuite-nest",
@@ -108,19 +107,21 @@ export default function Projects() {
         },
     ];
 
+    console.log(hackathons.length)
+
     return(
         <main>
             <Border sectionTitle="HACKATHONS" textOnLeft={false} />
 
-            <ProjectList projects={hackathons} numProjects={hackathons.length}/>
+            <ProjectList projects={hackathons}/>
 
             <Border sectionTitle="SCHOOL PROJECTS" textOnLeft={true} />
 
-            <ProjectList projects={schoolProjects} numProjects={schoolProjects.length}/>
+            <ProjectList projects={schoolProjects}/>
             
             <Border sectionTitle="PERSONAL PROJECTS" textOnLeft={false}/>
 
-            <ProjectList projects={personalProjects} numProjects={personalProjects.length} />
+            <ProjectList projects={personalProjects} />
 
         </main>
     )
@@ -128,14 +129,15 @@ export default function Projects() {
 
 function ProjectList({
     projects,
-    numProjects
 } : ProjectListProps) {
     return (
-        <section className="mt-15 mb-25 flex flex-wrap">
+        <section className="mt-10 mb-12 flex flex-wrap">
             {projects.map((item, idx) => (
-                <div key={idx} className={`w-1/${numProjects} flex flex-col`}>
+                <div key={idx} className={`w-1/3 flex flex-col`}>
                     {/* Square box */}
-                    <div className={`group relative w-full pt-[100%] overflow-hidden`}>
+                    <div
+                        className={`relative w-full pt-[100%] group overflow-hidden`}
+                    >
                         {/* Image filling the square */}
                         <img
                             src={item.image} 
@@ -143,7 +145,11 @@ function ProjectList({
                             className="absolute inset-0 w-full h-full object-cover"
                         />
 
-                        <div className={`absolute inset-0 ${item.color} opacity-80 pointer-events-none`}/>
+                        <div
+                            className={`absolute inset-0 ${item.color} opacity-50 pointer-events-none`}
+                        />
+
+
                         {/* Hover overlay */}
                         <div className="absolute inset-0 bg-[white] bg-opacity-30 opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-center items-center text-black text-center p-4">
                             {/* Description */}
