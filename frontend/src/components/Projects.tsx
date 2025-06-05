@@ -19,9 +19,9 @@ interface HackathonProject extends Project {
     devpost: string; // Required for hackathons
 }
 
-interface PersonalProject extends Project {
+// interface PersonalProject extends Project {
 
-}
+// }
 
 interface SchoolProject extends Project {
     courseCode?: string;
@@ -56,7 +56,7 @@ export default function Projects() {
         }
     ];
 
-    const personalProjects: PersonalProject[] = [
+    const personalProjects: Project[] = [
         {
             title: "PERSONAL PORTFOLIO",
             color: "bg-[#56574e]",
@@ -135,9 +135,7 @@ function ProjectList({
             {projects.map((item, idx) => (
                 <div key={idx} className={`w-1/${numProjects} flex flex-col`}>
                     {/* Square box */}
-                    <div
-                        className={`relative w-full pt-[100%] group overflow-hidden`}
-                    >
+                    <div className={`group relative w-full pt-[100%] overflow-hidden`}>
                         {/* Image filling the square */}
                         <img
                             src={item.image} 
@@ -145,11 +143,7 @@ function ProjectList({
                             className="absolute inset-0 w-full h-full object-cover"
                         />
 
-                        <div
-                            className={`absolute inset-0 ${item.color} opacity-80 pointer-events-none`}
-                        />
-
-
+                        <div className={`absolute inset-0 ${item.color} opacity-80 pointer-events-none`}/>
                         {/* Hover overlay */}
                         <div className="absolute inset-0 bg-[white] bg-opacity-30 opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-center items-center text-black text-center p-4">
                             {/* Description */}
