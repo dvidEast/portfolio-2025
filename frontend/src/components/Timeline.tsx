@@ -30,7 +30,7 @@ export default function Timeline() {
             ],
         },
         {
-            title: "DEVELOPMENT LEAD",
+            title: "SOFTWARE DEVELOPMENT LEAD",
             subtitle: "UBC Science Undergraduate Society",
             date: "2024 – 2025",
             bulletColor: "bg-blue-400",
@@ -42,8 +42,8 @@ export default function Timeline() {
             ],
         },
         {
-            title: "APPLIED AI / SOFTWARE ENGINEER",
-            subtitle: "DraapeAI (Startup)",
+            title: "SOFTWARE DEVELOPER",
+            subtitle: "DraapeAI",
             date: "2024 – 2024",
             bulletColor: "bg-pink-400",
             details: [
