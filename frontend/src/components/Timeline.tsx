@@ -9,7 +9,7 @@ export default function Timeline() {
             date: "2021 – Now",
             bulletColor: "bg-yellow-400",
             details: [
-                "Science Undergraduate Society (SUS)",
+                "Science Undergraduate Society (SUS) ->",
                 "SUS Associate Vice President Communications (2024–2025)",
                 "SUS Development Lead (2024–2025)",
                 "SUS Media Lead (2023–2024)",
@@ -18,15 +18,15 @@ export default function Timeline() {
             ],
         },
         {
-            title: "APPLIED AI / SOFTWARE ENGINEER",
-            subtitle: "DraapeAI (Startup)",
-            date: "2024 – 2024",
-            bulletColor: "bg-pink-400",
+            title: "SOFTWARE DEVELOPER",
+            subtitle: "Trickster's Hideout",
+            date: "2025 - 2025",
+            bulletColor: "bg-red-400",
             details: [
-                "Engineered a machine learning model to automate garment pattern generation, reducing manual labor by 60%.",
-                "Built a computer vision system to estimate body measurements from user-submitted images with 92% average accuracy.",
-                "Developed a mobile app in React Native to capture user images and deliver personalized pattern previews, enabling real-time feedback and enhancing the user experience.",
-                "Created an interactive web application in TypeScript and React, integrating the pattern generation ML model for end-to-end usage across mobile and web applications."
+                "Contracted via Riipen to build a full-stack financial dashboard integrating sales data from Square, WordPress Events, and Eventbrite into a unified interface.",
+                "Utilized Postman to test APIs and documented necessary data transformations for integration.",
+                "Developed the application using React (Next.js) and RESTful APIs, implementing complex data transformation and aggregation logic in TypeScript to normalize inconsistent third-party data into structured, queryable formats.",
+                "Enhanced cross-platform user workflow by reducing navigation steps by over 70%, improving sales data accessibility through centralized dashboard components built with React Hooks and Tailwind CSS."
             ],
         },
         {
@@ -35,21 +35,23 @@ export default function Timeline() {
             date: "2024 – 2025",
             bulletColor: "bg-blue-400",
             details: [
-                "Led a team of 6 developers in building and maintaining the organization’s website using React (Next.js) in TypeScript, and Tailwind CSS, ensuring seamless functionality and modern UI/UX, providing accessibility and learning resources used by over 16,000 UBC undergraduate science students.",
-                "Transitioned from Wordpress to a modular, component-driven React-based web application, utilizing React Hooks and Context API for state management, resulting in a 30% increase in user engagement."
+                "Proposed and led the migration of the organization’s website from WordPress to a React-based web application, improving developer flexibility and user accessibility.",
+                "The proposed initiative created more effective developer opportunities with industry-standard tools and learning experiences for students who pursuing software roles.",
+                "Managed a team of 6 developers to design, build, and maintain the new website using React (Next.js), TypeScript, and Tailwind CSS, delivering a modern and responsive UI/UX.",
+                "Enabled access to resources for over 16,000 UBC science undergraduates by leveraging modular components, React Hooks, and the Context API for efficient state management, resulting in a 30% increase in user engagement."
             ],
         },
         {
-            title: "SOFTWARE DEVELOPER",
-            subtitle: "Freelance - 1 project(s) completed",
-            date: "2024 - Now",
-            bulletColor: "bg-red-400",
+            title: "APPLIED AI / SOFTWARE ENGINEER",
+            subtitle: "DraapeAI (Startup)",
+            date: "2024 – 2024",
+            bulletColor: "bg-pink-400",
             details: [
-                "Engineered a full-stack financial dashboard in React (Next.js) with built-in API routes, integrating sales data from Square, WordPress Events, and Eventbrite via RESTful APIs.",
-                "Implemented robust data transformation and aggregation logic on the frontend using TypeScript, structuring inconsistent external data sources into unified, queryable formats.",
-                "Optimized cross-platform user workflow by reducing navigation steps by over 70%, improving sales data accessibility through centralized dashboard UI components built with React Hooks and Tailwind CSS."
+                "Developed a mobile app for a body measurement prediction system using React Native to capture user images and display body measurement data through a clean and accessible UI.",
+                "Designed and implemented a responsive web application using React and TypeScript that integrated with the company’s ML pipeline, allowing users to generate and preview clothing patterns in real-time.",
+                "Reduced image upload and measurement processing time by 6.4 seconds over the course of my tenure, resulting in a smoother and faster user experience."
             ],
-        },
+        }
     ];
 
     const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -107,7 +109,7 @@ export default function Timeline() {
 
                                 <p className="text-sm mb-4">{item.subtitle}</p>
                                 {item.details.length > 0 && (
-                                    <ul className="list-disc text-sm text-gray-300 ml-5 space-y-1">
+                                    <ul className="list-disc text-sm text-gray-300 ml-5 space-y-3">
                                     {item.details.map((detail, i) => (
                                         <li key={i}>{detail}</li>
                                     ))}
