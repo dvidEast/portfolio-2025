@@ -25,11 +25,24 @@ This website serves as my personal portfolio, highlighting:
 - Downloadable resume
 - Contact form with email integration
 
+## FEATURES IN DEVELOPMENT
+- Art gallery page 
+- Articles page -> built in reflections portal on cool things I've learned
+- Database -> schema driven, SQL database to store data once it becomes dynamic
+
 ## 🛠️ Tech Stack
 **Frontend:**  
 - [React](https://reactjs.org/) / [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)  
 
+**Testing**
+- Jest
+- Selenium
+
 **Deployment:**  
 - [Vercel](https://vercel.com/)
+- GitLab
+
+**Next.js Configuration**
+- Pages router -> simplicity, perfect optimization not required; more emphasis on fast development and easy readability.
