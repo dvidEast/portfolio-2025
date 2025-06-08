@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useRef } from "react";
 import Border from "./Border"
 
 export default function TechnicalSkills() {
@@ -35,16 +36,47 @@ export default function TechnicalSkills() {
         }
     ]
 
+    const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+    
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+            });
+        },
+        {
+            threshold: 0.1,
+        }
+        );
+
+        itemRefs.current.forEach((ref) => {
+        if (ref) observer.observe(ref);
+        });
+
+        return () => {
+        itemRefs.current.forEach((ref) => {
+            if (ref) observer.unobserve(ref);
+        });
+        };
+    }, []);
+
     return (
-        <section className="w-full mb-25">
+        <section className="w-full mb-15">
             <Border sectionTitle="TECHNICAL SKILLS" textOnLeft={true} />
 
-            <div className="px-6 py-10 mt-25">
+            <div className="px-6 py-10 mt-15">
                 <div className="max-w-4xl mx-auto text-left space-y-7">
-                    {skills.map((skill) => (
+                    {skills.map((skill, index) => (
                     <div
                         key={skill.type}
-                        className="flex flex-col sm:flex-row sm:items-start flex-wrap gap-y-2"
+                        className="timeline-item flex flex-col sm:flex-row sm:items-start flex-wrap gap-y-2"
+                        ref={(el) => {
+                            itemRefs.current[index] = el;
+                        }}
+                        style={{ transitionDelay: `${index * 100}ms` }}
                     >
                         {/* Skill Type */}
                         <span className="sm:w-48 font-bold">{skill.type}</span>

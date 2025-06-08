@@ -1,12 +1,44 @@
 import Border from "./Border";
+import { useEffect, useRef } from 'react';
 
 export default function About() {
-    return(
+    const sectionRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+            }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
+
+    return (
         <>
             <Border sectionTitle="MY STORY" textOnLeft={true} />
 
-            <section className="w-full mt-25 mb-25 flex items-center justify-center">
-                <div className='max-w-5xl flex flex-col gap-y-7'>
+            <section
+                className="w-full mt-25 mb-25 flex items-center justify-center timeline-item"
+                ref={sectionRef}
+                style={{ transitionDelay: `${100}ms` }}
+            >
+                <div className="max-w-5xl flex flex-col gap-y-7">
                     <div className="px-6">
                         Hi, I&apos;m David 👋 
                     </div>
@@ -20,10 +52,10 @@ export default function About() {
                     </div>
 
                     <div className="px-6">
-                        One of my long-term career goals is using data science and technology to <span className='text-[#cf9eab]'>address large-scale economic and societal challenges — like South Korea&apos;s declining birth rate</span> — and designing solutions that are not only functional, but sustainable and people-first.
+                        Besides coding I spend my time on anything <span className='text-[#ffb969]'>music or <a className="underline" href="https://vsco.co/dvidlimm/gallery#google_vignette" target="_blank" rel="noopener noreferrer" aria-label="Vsco">art</a>, going to the gym, or cooking!</span>
                     </div>
                 </div>
             </section>
         </>
-    )
+    );
 }
