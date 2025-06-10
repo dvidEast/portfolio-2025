@@ -9,7 +9,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>DAVID LIM</title>
         <meta name="description" content="Personal website of David Lim" />
         <link rel="icon" href="/DL.ico" />
-
         <meta property="og:image" content="/david_lim_image.png" />
       </Head>
       <Component {...pageProps} />
