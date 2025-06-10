@@ -6,7 +6,7 @@ Version 5 of my portfolio.
 - [About](#about)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
+- [Project Structure](#project-structure) 
 - [Getting Started](#getting-started)
 - [Screenshots](#screenshots)
 - [Contact](#contact)
