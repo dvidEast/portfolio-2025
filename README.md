@@ -46,3 +46,15 @@ This website serves as my personal portfolio, highlighting:
 
 **Next.js Configuration**
 - Pages router -> simplicity, perfect optimization not required; more emphasis on fast development and easy readability.
+
+## To Run:
+1. Git clone
+2. cd ./frontend
+3. npm install
+4. npm run dev -> this will let you run the application locally
+
+Extras
+
+5. (from the root folder) act -W .github/workflows/main.yml --container-architecture linux/amd64
+    - this will let you test the github actions via Docker
+    - make sure to have Docker running on your local device before you run
