@@ -119,7 +119,7 @@ export default function Projects() {
             image: "/project_images/sus_mock.png",
             description: "Mock website for the Science Undergraduate Society to propose a new website.",
             myRole: "Built with NextJS.",
-            github: "https://github.com/dvidEast/ID-Verification-API",
+            github: "https://github.com/dvidEast/www.susexample",
             technologies: ["Next.js", "React", "Node.js", "Figma"]
         }
     ];
