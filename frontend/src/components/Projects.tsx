@@ -16,6 +16,7 @@ interface Project {
     description: string;
     github: string;
     devpost?: string;
+    technologies?: string[];
 }
 
 interface HackathonProject extends Project {
@@ -41,7 +42,8 @@ export default function Projects() {
             description: "ML application that takes 2D photos and generate 3D images (OBJ file) by generating unseen angles.",
             myRole: "Worked on the frontend design with NextJS + firebase authentication and data population.",
             devpost: "https://devpost.com/software/kings-craft",
-            github: "https://github.com/koh3n/KINGSCRAFT"
+            github: "https://github.com/koh3n/KINGSCRAFT",
+            technologies: ["Next.js", "React", "Node.js", "Firebase", "AWS S3", "Machine Learning"]
         },
         {
             title: "NWHACKS 2024",
@@ -51,7 +53,8 @@ export default function Projects() {
             description: "ML application that tracks your hands to keep you off your phone.",
             myRole: "Worked on the frontend design with Figma and React + data pipeline and backend integration with ExpressJS.",
             devpost: "https://devpost.com/software/pandai",
-            github: "https://github.com/dvidEast/nwHacks-Panda"
+            github: "https://github.com/dvidEast/nwHacks-Panda",
+            technologies: ["Vite", "React", "Node.js", "Figma"]
         },
         {
             title: "HOOTSUITE PRODUCT CHALLENGE",
@@ -61,7 +64,8 @@ export default function Projects() {
             description: "Proposed and presented a solution to Hootsuite executives for authentically engaging Gen Z audiences.",
             myRole: "Worked on product strategy, UI/UX design in Figma, technical presentation slides, and pitch strategy.",
             devpost: "https://devpost.com/software/hootsuite-nest",
-            github: ""
+            github: "",
+            technologies: ["Figma", "Product Strategy", "Technical Presentation"] 
         }
     ];
 
@@ -74,7 +78,8 @@ export default function Projects() {
             description: "Full-stack music app that organizes songs into playlists based on user-selected genres.",
             myRole: "Developed a CRUD application in Java with strong emphasis on object-oriented design and unit testing using JUnit.",
             github: "https://github.com/dvidEast/SauceTheAux",
-            courseCode: "CPSC 210 - Software Construction (OOP in Java)"
+            courseCode: "CPSC 210 - Software Construction (OOP in Java)",
+            technologies: ["Java", "JUnit", "Swing"]
         },
         {
             title: "DONUTS",
@@ -84,7 +89,8 @@ export default function Projects() {
             description: "Web app that facilitates small group and 1-on-1 meeting matches based on shared availability.",
             myRole: "Built full-stack PWA using Next.js, TypeScript, and Node.js; designed SQL schema and implemented backend queries with the oracledb driver.",
             github: "https://github.com/naijwu/donut",
-            courseCode: "CPSC 304 - Relational Databases"
+            courseCode: "CPSC 304 - Relational Databases",
+            technologies: ["Next.js", "Typescript", "Node.js", "SQL", "Oracle", "Figma"]
         },
         {
             title: "WEATHER CLASSIFICATION",
@@ -94,7 +100,8 @@ export default function Projects() {
             description: "Used machine learning to predict weather outcomes based on features from a Kaggle weather dataset.",
             myRole: "Implemented K-Nearest Neighbors (KNN) classification and performed data analysis in R.",
             github: "https://github.com/dvidEast/dsci_weather_classification",
-            courseCode: "DSCI 100 - Intro to Data Science (R)"
+            courseCode: "DSCI 100 - Intro to Data Science (R)",
+            technologies: ["R", "tidyverse", "tidymodels"]
         }
     ];
 
@@ -105,8 +112,9 @@ export default function Projects() {
             titleColor: "text-grey-600",
             image: "/project_images/portfolio_2025.png",
             description: "My professional portfolio with experience, projects, and skillset.",
-            myRole: "Built in NextJS, TypeScript, and Tailwind.",
-            github: "https://github.com/dvidEast/portfolio-2025"
+            myRole: "Built frontend in NextJS, TypeScript, and Tailwind.",
+            github: "https://github.com/dvidEast/portfolio-2025",
+            technologies: ["Next.js", "React", "Typescript", "Tailwind"]
         },
         {
             title: "SCIENCE UNDERGRADUATE SOCIETY MOCK WEBSITE",
@@ -115,17 +123,8 @@ export default function Projects() {
             image: "/project_images/sus_mock.png",
             description: "Mock website for the Science Undergraduate Society to propose a new website.",
             myRole: "Built with NextJS.",
-            github: "https://github.com/dvidEast/ID-Verification-API"
-        },
-        {
-            title: "JUST ONE DANCE",
-            color: "bg-[#ffbb90]",
-            titleColor: "text-pink-600",
-            image: "/project_images/just_dance.webp",
-            description: "In development.",
-            myRole: "Built with NextJS, Typescript, Tailwind, with backend in Flask and hosted on AWS.",
-            devpost: "",
-            github: ""
+            github: "https://github.com/dvidEast/ID-Verification-API",
+            technologies: ["Next.js", "React", "Node.js", "Figma"]
         }
     ];
 
@@ -152,7 +151,6 @@ function ProjectList({
 }: ProjectListProps) {
     const sectionRef = useRef<HTMLDivElement | null>(null);
     const [isVisible, setIsVisible] = useState(false);
-    const [tappedIndex, setTappedIndex] = useState<number | null>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -164,19 +162,12 @@ function ProjectList({
                     }
                 });
             },
-            {
-                threshold: 0.1,
-            }
+            { threshold: 0.1 }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
+        if (sectionRef.current) observer.observe(sectionRef.current);
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
-            }
+            if (sectionRef.current) observer.unobserve(sectionRef.current);
         };
     }, []);
 
@@ -188,84 +179,79 @@ function ProjectList({
     return (
         <section
             ref={sectionRef}
-            className={`mt-20 mb-30 flex flex-wrap ${animationClass} ${isVisible ? "visible" : ""}`}
+            className={`mt-20 mb-30 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${animationClass} ${isVisible ? "visible" : ""}`}
         >
             {projects.map((item, idx) => {
-                const isTapped = tappedIndex === idx;
+                const link = item.devpost || item.github;
 
                 return (
-                    <div key={idx} className="w-1/3 flex flex-col">
-                        {/* Square box */}
-                        <div
-                            className="relative w-full pt-[100%] group overflow-hidden"
-                            onClick={() => {
-                                // Toggle tap state on mobile
-                                setTappedIndex(isTapped ? null : idx);
-                            }}
+                    <div key={idx} className="flex flex-col bg-white shadow-md rounded-lg overflow-hidden">
+                        {/* ✅ Image links to project */}
+                        <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative w-full pt-[56.25%] block"
                         >
                             <img
                                 src={item.image}
                                 alt={item.title}
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
+                        </a>
 
-                            <div
-                                className={`absolute inset-0 ${item.color} opacity-45 pointer-events-none`}
-                            />
+                        <div className="p-4 flex flex-col flex-grow">
+                            <h1 className={`${item.titleColor} text-lg font-bold mb-2`}>{item.title}</h1>
 
-                            <div
-                                className={`
-                                    absolute inset-0 bg-[white] bg-opacity-30
-                                    transition-opacity duration-300 flex flex-col justify-center items-center text-black p-4 overflow-y-auto
-                                    ${
-                                        isTapped
-                                            ? "opacity-95"
-                                            : "opacity-0 md:opacity-0 md:group-hover:opacity-95"
-                                    }
-                                `}
-                            >
-                                <div className="max-h-full overflow-y-auto text-left">
-                                    <h1
-                                        className={`${item.titleColor} font-bold ${isTapped ? 'text-sm' : 'text-lg'} mb-6`}
-                                    >
-                                        {item.title}
-                                    </h1>
-                                    <p className={`${isTapped ? 'text-sm' : 'text-lg'} mb-4 font-bold`}>PROJECT:</p>
-                                    <p className={`${isTapped ? 'text-sm' : 'text-lg'} mb-4`}>{item.description}</p>
-                                    <p className={`${isTapped ? 'text-sm' : 'text-lg'} mb-4 font-bold`}>MY CONTRIBUTIONS:</p>
-                                    {item.myRole && <p className={`${isTapped ? 'text-sm' : 'text-lg'} mb-4`}>{item.myRole}</p>}
+                            <p className="text-sm font-semibold mb-1">PROJECT:</p>
+                            <p className="text-sm mb-3">{item.description}</p>
 
-                                    <div className="flex flex-row gap-6 mt-4 justify-center">
-                                        {item.github && (
-                                            <a
-                                                href={item.github}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="relative group"
-                                                onClick={(e) => e.stopPropagation()}
+                            {item.myRole && (
+                                <>
+                                    <p className="text-sm font-semibold mb-1">MY CONTRIBUTIONS:</p>
+                                    <p className="text-sm mb-3">{item.myRole}</p>
+                                </>
+                            )}
+
+                            {/* ✅ Technologies Used */}
+                            {item.technologies && item.technologies.length > 0 && (
+                                <div className="mb-4">
+                                    <p className="text-sm font-semibold mb-1">TECHNOLOGIES USED:</p>
+                                    <ul className="flex flex-wrap gap-2 text-xs text-gray-700">
+                                        {item.technologies.map((tech, i) => (
+                                            <li
+                                                key={i}
+                                                className="bg-gray-100 px-2 py-1 rounded"
                                             >
-                                                <Github className="w-6 h-6 hover:text-gray-300 cursor-pointer transition" />
-                                            </a>
-                                        )}
-
-                                        {item.devpost && (
-                                            <a
-                                                href={item.devpost}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="relative group"
-                                                onClick={(e) => e.stopPropagation()}
-                                            >
-                                                <ExternalLink className="w-6 h-6 hover:text-gray-300 cursor-pointer transition" />
-                                            </a>
-                                        )}
-                                    </div>
+                                                {tech}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
+                            )}
+
+                            {/* GitHub + Devpost links */}
+                            <div className="mt-auto flex gap-4">
+                                {item.github && (
+                                    <a
+                                        href={item.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Github className="w-6 h-6 hover:text-gray-600 transition" />
+                                    </a>
+                                )}
+                                {item.devpost && (
+                                    <a
+                                        href={item.devpost}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <ExternalLink className="w-6 h-6 hover:text-gray-600 transition" />
+                                    </a>
+                                )}
                             </div>
                         </div>
-
-                        {/* Title below */}
-                        <div className="pl-1 text-xs mt-2">{item.title}</div>
                     </div>
                 );
             })}
