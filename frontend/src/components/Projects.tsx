@@ -23,10 +23,6 @@ interface HackathonProject extends Project {
     devpost: string; // Required for hackathons
 }
 
-// interface PersonalProject extends Project {
-
-// }
-
 interface SchoolProject extends Project {
     courseCode?: string;
 }
@@ -179,66 +175,82 @@ function ProjectList({
     return (
         <section
             ref={sectionRef}
-            className={`mt-20 mb-30 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${animationClass} ${isVisible ? "visible" : ""}`}
+            className={`px-5 mt-20 mb-30 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${animationClass} ${isVisible ? "visible" : ""}`}
         >
             {projects.map((item, idx) => {
                 const link = item.devpost || item.github;
 
                 return (
-                    <div key={idx} className="flex flex-col bg-white shadow-md rounded-lg overflow-hidden">
-                        {/* ✅ Image links to project */}
+                    <div
+                        key={idx}
+                        className="flex flex-col bg-[#364051] shadow-xl hover:shadow-2xl rounded-lg overflow-hidden transition-shadow duration-300"
+                    >
                         <a
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="relative w-full pt-[56.25%] block"
+                            className="relative w-full pt-[56.25%] block group overflow-hidden"
                         >
                             <img
                                 src={item.image}
                                 alt={item.title}
-                                className="absolute inset-0 w-full h-full object-cover"
+                                className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
                             />
+
+                            {/* Overlay tint & text */}
+                            <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-60 transition-opacity duration-300 flex justify-center items-center">
+                                <span className="text-white text-sm font-semibold bg-black bg-opacity-50 px-4 py-2 rounded shadow-md">
+                                    Check out the source code!
+                                </span>
+                            </div>
                         </a>
 
                         <div className="p-4 flex flex-col flex-grow">
-                            <h1 className={`${item.titleColor} text-lg font-bold mb-2`}>{item.title}</h1>
+                            <h1 className={`text-[#32b0b4] text-lg font-bold mb-4`}>{item.title}</h1>
 
                             <p className="text-sm font-semibold mb-1">PROJECT:</p>
-                            <p className="text-sm mb-3">{item.description}</p>
+                            <p className="text-sm mb-4">{item.description}</p>
 
                             {item.myRole && (
                                 <>
                                     <p className="text-sm font-semibold mb-1">MY CONTRIBUTIONS:</p>
-                                    <p className="text-sm mb-3">{item.myRole}</p>
+                                    <p className="text-sm mb-5">{item.myRole}</p>
                                 </>
                             )}
 
-                            {/* ✅ Technologies Used */}
+                            {/* Technologies Used */}
                             {item.technologies && item.technologies.length > 0 && (
-                                <div className="mb-4">
-                                    <p className="text-sm font-semibold mb-1">TECHNOLOGIES USED:</p>
-                                    <ul className="flex flex-wrap gap-2 text-xs text-gray-700">
-                                        {item.technologies.map((tech, i) => (
-                                            <li
-                                                key={i}
-                                                className="bg-gray-100 px-2 py-1 rounded"
-                                            >
-                                                {tech}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
+                            <div className="mb-4 mt-2">
+                                <ul className="flex flex-wrap gap-2 text-xs font-bold text-[#f5faff]">
+                                    {item.technologies.map((tech, i) => (
+                                        <li
+                                            key={i}
+                                            className="px-3 py-1 rounded bg-[#cf9eab] bg-gradient-to-br from-[#cf9eab] to-[#c98999]
+                                                    shadow-md text-shadow-sm backdrop-blur-sm"
+                                            style={{
+                                                textShadow: '0 1px 2px rgba(0, 0, 0, 0.4)',
+                                                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.2)',
+                                                backdropFilter: 'blur(4px)',
+                                                WebkitBackdropFilter: 'blur(4px)',
+                                            }}
+                                        >
+                                            {tech}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
 
                             {/* GitHub + Devpost links */}
-                            <div className="mt-auto flex gap-4">
+                            <div className="mt-3 mb-3 flex gap-4">
                                 {item.github && (
                                     <a
                                         href={item.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <Github className="w-6 h-6 hover:text-gray-600 transition" />
+                                        <Github className="w-5 h-5 hover:text-gray-600 transition" />
                                     </a>
                                 )}
                                 {item.devpost && (
@@ -247,7 +259,7 @@ function ProjectList({
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <ExternalLink className="w-6 h-6 hover:text-gray-600 transition" />
+                                        <ExternalLink className="w-5 h-5 hover:text-gray-600 transition" />
                                     </a>
                                 )}
                             </div>
@@ -257,4 +269,4 @@ function ProjectList({
             })}
         </section>
     );
-}
+};
