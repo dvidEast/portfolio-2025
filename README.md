@@ -1,15 +1,6 @@
 # [davidlim.tech](https://www.davidlim.tech/)
 
-Version 5 of my portfolio.
-
-## 📌 Table of Contents
-- [About](#about)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure) 
-- [Getting Started](#getting-started)
-- [Screenshots](#screenshots)
-- [Contact](#contact)
+Version 5 of my portfolio :)
 
 ## 🧠 About
 This website serves as my personal portfolio, highlighting:
@@ -18,43 +9,12 @@ This website serves as my personal portfolio, highlighting:
 - Projects (Hackathons, Personal, School)
 - Contact and social media links
 
-## ✨ Features
-- Fully responsive design
-- Animated transitions
-- Project gallery
-- Downloadable resume
-- Contact form with email integration
-
-## FEATURES IN DEVELOPMENT
-- Art gallery page 
-- Articles page -> built in reflections portal on cool things I've learned
-- Database -> schema driven, SQL database to store data once it becomes dynamic
-
 ## 🛠️ Tech Stack
 **Frontend:**  
 - [React](https://reactjs.org/) / [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)  
 
-**Testing**
-- Jest
-- Selenium
-
 **Deployment:**  
 - [Vercel](https://vercel.com/)
-- GitLab
-
-**Next.js Configuration**
-- Pages router -> simplicity, perfect optimization not required; more emphasis on fast development and easy readability.
-
-## To Run:
-1. Git clone
-2. cd ./frontend
-3. npm install
-4. npm run dev -> this will let you run the application locally
-
-Extras
-
-5. (from the root folder) act -W .github/workflows/main.yml --container-architecture linux/amd64
-    - this will let you test the github actions via Docker
-    - make sure to have Docker running on your local device before you run
+- Gitub Actions
