@@ -19,7 +19,7 @@ export default function FigmaDesignWorkSection({
         >
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl font-bold mb-8">Figma / Design Work</h2>
-                <p className="text-gray-700 mb-12 text-lg max-w-3xl">
+                <p className="text-gray-700 mb-12 text-lg">
                     I specialize in clean, modern UI design with a focus on accessibility, responsive layout, and brand identity. I use <span className="font-semibold text-black">Figma</span> to create wireframes, mockups, and interactive prototypes that support developer handoff and iterative testing.
                 </p>
 
