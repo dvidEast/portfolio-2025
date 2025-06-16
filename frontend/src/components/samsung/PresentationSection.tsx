@@ -17,7 +17,7 @@ export default function PresentationCommunicationSection({
         >
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl font-bold mb-6">Presentation and Communication</h2>
-                <p className="text-gray-700 mb-10 text-lg max-w-3xl">
+                <p className="text-gray-700 mb-10 text-lg">
                     Across all my roles, I’ve taken pride in bridging technical execution with storytelling—ensuring that technical insights are clearly communicated to non-technical stakeholders, clients, and end users.
                 </p>
 

@@ -18,7 +18,7 @@ export default function ArtworkForSamsung({
         >
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl font-bold mb-6">Creative Works</h2>
-                <p className="text-gray-700 mb-10 text-lg max-w-3xl">
+                <p className="text-gray-700 mb-10 text-lg">
                     Art has always been more than a creative outlet for me — it sharpens the way I approach design, communication, and user experience in my technical work. Whether I’m wireframing an interface, presenting a product vision, or writing documentation, my background in visual storytelling helps me communicate ideas clearly and intuitively. This section highlights some of the pieces that have shaped how I think, create, and connect with others.
                 </p>
                 
