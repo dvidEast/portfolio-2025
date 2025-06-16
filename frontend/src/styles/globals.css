@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .page-light {
   --background: #ffffff;
   --foreground: #171717;
@@ -14,22 +18,15 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono); */
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #292A2C;
-    --foreground: #ffffff;
-  }
-} */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif
+  font-family: 'SamsungSharpSans'
 }
+
+/* ========= Main Animations ========= */
 
 @keyframes fadeSlideIn {
   0% {
@@ -133,4 +130,30 @@ body {
 .visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* ========= Samsung Fonts ========= */
+
+@font-face {
+  font-family: 'SamsungSharpSans';
+  src: url('/samsung/fonts/samsungsharpsans-medium.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SamsungSharpSans';
+  src: url('/samsung/fonts/samsungsharpsans-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SamsungSharpSans';
+  src: url('/samsung/fonts/samsungsharpsans.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }

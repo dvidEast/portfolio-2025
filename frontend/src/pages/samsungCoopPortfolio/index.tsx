@@ -1,127 +1,248 @@
-import SamsungNavbar from "@/components/SamsungNavbar";
-import { Barlow } from "next/font/google";
+"use client";
 
-const barlow = Barlow({
-    subsets: ["latin"],
-});
+import { useEffect, useState, useRef } from "react";
+import SamsungNavbar from "@/components/SamsungNavbar";
+import Image from "next/image";
+
+type Section = {
+    title: string;
+    description: string;
+    items: string[];
+};
 
 export default function SamsungCoopPortfolio() {
-    return (
+    const [activeSection, setActiveSection] = useState<string>("");
 
-        <div
-            className={`page-light text-black ${barlow.className}`}
-        >
+    const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+            const id = entry.target.getAttribute("id");
+            if (entry.isIntersecting && id) {
+                setActiveSection(id);
+            }
+            });
+        },
+        {
+            rootMargin: "-30% 0px -60% 0px",
+            threshold: 0.1,
+        }
+        );
+
+        const sectionElements = Object.keys(sectionRefs.current).map(
+        (id) => sectionRefs.current[id]
+        );
+
+        sectionElements.forEach((el) => {
+        if (el) observer.observe(el);
+        });
+
+        return () => {
+        sectionElements.forEach((el) => {
+            if (el) observer.unobserve(el);
+        });
+        };
+    }, []);
+
+    return (
+        <div className="bg-white text-black font-sans scroll-smooth">
             <SamsungNavbar />
 
+            {/* Hero + TOC */}
+            <section className="flex flex-col lg:flex-row gap-12 items-start justify-between px-6 md:px-20 py-20 bg-gradient-to-br from-white to-gray-100">
+                {/* TOC */}
+                <TableOfContents sections={sections} activeSection={activeSection} />
+
+                <div className="max-w-5xl">
+                    <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        Hello to the hiring team at Samsung R&D Vancouver!
+                    </h1>    
+                
+                    {/* Hero Text */}
+                    <div className="max-w-3xl">
+                        <p className="text-lg mb-4">
+                            I’m David and I’m excited to show you some of my work with you.
+                        </p>
+                        <p className="text-lg mb-4">
+                            While I was thinking about which links and portfolios to send over, I
+                            realized that none of them truly captured everything in one place.
+                        </p>
+                        <p className="text-lg mb-4">
+                            So I created this page to highlight the most relevant work in a format
+                            that’s easy to skim quickly, but also provides the depth needed if you
+                            want to explore further.
+                        </p>
+                        <p className="text-lg mb-4">
+                            I built this within a day to not only demonstrate the work itself, but
+                            also showcase my ability to design, code, and move fast.
+                        </p>
+                        <p className="text-lg mb-4">
+                            Rather than just following the job description for what may be relevant,
+                            I reflected on our interviews and the moments that seemed to catch your
+                            interest. Based on that, I organized my portfolio into themes (see below)!
+                        </p>
+                    </div>
+                </div>
+
+                {/* Hero Image */}
+                <div className="w-full max-w-md mb-10 lg:mb-0">
+                    <Image
+                        src="/samsung/samsung-hero.png"
+                        alt="Samsung Hero"
+                        width={500}
+                        height={500}
+                        className="rounded-full"
+                    />
+                </div>
+            </section>
+
+            {/* Section Content */}
+            {sections.map((section) => {
+                const id = section.title.toLowerCase().replace(/\s+/g, "-");
+
+                return (
+                <section
+                    key={section.title}
+                    id={id}
+                    ref={(el) => {
+                        sectionRefs.current[id] = el;
+                    }}
+                    className="px-6 md:px-20 py-16 border-t bg-white"
+                >
+                    <div className="max-w-5xl mx-auto">
+                    <h2 className="text-3xl font-bold mb-6">{section.title}</h2>
+                    <p className="text-gray-700 mb-4 text-lg">{section.description}</p>
+                    <ul className="list-disc list-inside space-y-2 text-gray-800">
+                        {section.items.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                        ))}
+                    </ul>
+                    </div>
+                </section>
+                );
+            })}
         </div>
-        // <div className="bg-[#F4F6F9] text-[#1A1A1A] font-sans">
-        //     <main className="max-w-6xl mx-auto px-6 py-12">
-        //         {/* Hero */}
-        //         <section className="bg-white shadow-lg rounded-2xl p-10 mb-12">
-        //         <h1 className="text-3xl font-bold mb-4 text-[#1428A0]">
-        //             Hello to the hiring team at Samsung R&D Vancouver!
-        //         </h1>
-        //         <p className="text-lg leading-relaxed">
-        //             I’m David and I’m excited to show you some of my work! I realized that most of my
-        //             work was scattered across many links, so I created this page to consolidate my
-        //             most relevant projects into a single, easy-to-browse location.
-        //         </p>
-        //         <p className="mt-4 text-lg">
-        //             I coded and launched this page within a day—check my GitHub if you don’t believe me 😉.
-        //             I curated these based on the job description and my conversations with interviewers—
-        //             highlighting key areas of interest like data science, SEO/marketing, coding, content creation,
-        //             and communication.
-        //         </p>
-        //         <p className="mt-4 text-lg italic text-gray-600">
-        //             Feel free to explore what’s most relevant to you!
-        //         </p>
-        //         </section>
-
-        //         {/* Table of Contents */}
-        //         <aside className="bg-[#E1E4E8] rounded-xl p-6 mb-12">
-        //         <h2 className="text-xl font-semibold mb-4 text-[#1428A0]">Jump To:</h2>
-        //         <ul className="list-disc pl-6 space-y-2 text-blue-700">
-        //             <li><a href="#data">Data Science, SEO & Marketing</a></li>
-        //             <li><a href="#code">Coding Experience</a></li>
-        //             <li><a href="#time">Time & Priority Management</a></li>
-        //             <li><a href="#blog">Blog Writing</a></li>
-        //             <li><a href="#media">Photo & Video Editing</a></li>
-        //             <li><a href="#figma">Figma Markups</a></li>
-        //             <li><a href="#present">Technical Presentations</a></li>
-        //             <li><a href="#creativity">Creativity</a></li>
-        //         </ul>
-        //         </aside>
-
-        //         {/* Sections */}
-        //         <Section id="data" title="Data Science, SEO & Marketing">
-        //         <ul className="list-disc ml-6 space-y-2">
-        //             <li>Major in Mathematics / Minor in Data Science</li>
-        //             <li>Samsung SEO ML Project</li>
-        //             <li>Churn Rate Analytics</li>
-        //         </ul>
-        //         </Section>
-
-        //         <Section id="code" title="Coding Experience">
-        //         <ul className="list-disc ml-6 space-y-2">
-        //             <li>SUS - Development Lead</li>
-        //             <li>DraapeAI - Software Developer</li>
-        //             <li>Trickster’s Hideout - Project Manager / Developer</li>
-        //             <li>Featured Projects: KingsCraft, Donuts</li>
-        //         </ul>
-        //         </Section>
-
-        //         <Section id="time" title="Time & Priority Management">
-        //         <p>Balancing multiple roles and responsibilities: SUS, school, personal projects, and work.</p>
-        //         </Section>
-
-        //         <Section id="blog" title="Blog Writing">
-        //         <p>
-        //             <a href="https://medium.com/@yourname" className="text-blue-600 underline" target="_blank">
-        //             Medium Article
-        //             </a>
-        //         </p>
-        //         </Section>
-
-        //         <Section id="media" title="Photo & Video Editing">
-        //         <ul className="list-disc ml-6 space-y-2">
-        //             <li>Photography portfolio from high school</li>
-        //             <li>Video project from biology class</li>
-        //         </ul>
-        //         </Section>
-
-        //         <Section id="figma" title="Figma Markups">
-        //         <ul className="list-disc ml-6 space-y-2">
-        //             <li>SUS UI Designs</li>
-        //             <li>Donuts App Prototypes</li>
-        //             <li>Marketing visuals for Hootsuite project</li>
-        //         </ul>
-        //         </Section>
-
-        //         <Section id="present" title="Presentation Work">
-        //         <ul className="list-disc ml-6 space-y-2">
-        //             <li>Hootsuite Pitch</li>
-        //             <li>Trickster’s Hideout Stakeholder Presentation</li>
-        //             <li>DraapeAI technical walkthroughs</li>
-        //         </ul>
-        //         </Section>
-
-        //         <Section id="creativity" title="Creativity">
-        //         <p>
-        //             <Link href="/art" className="text-blue-600 underline">View my art portfolio →</Link>
-        //         </p>
-        //         </Section>
-        //     </main>
-        //     <Footer />
-        // </div>
     );
 }
 
+// Page sections
+const sections: Section[] = [
+    {
+        title: "Data Science, SEO and Marketing",
+        description: "Relevant technical and strategic projects.",
+        items: [
+        "Major in Mathematics",
+        "Minor in Data Science",
+        "Samsung SEO ML Project",
+        "Churn Rate Analytics",
+        ],
+    },
+    {
+        title: "Coding Experience",
+        description: "Development work in production and academic settings.",
+        items: [
+        "SUS – Development Lead",
+        "DraapeAI – Software Developer",
+        "Trickster’s Hideout – Dev/PM",
+        "KingsCraft, Donuts",
+        ],
+    },
+    {
+        title: "Time and Priority Management",
+        description: "Organizing and managing cross-functional tasks.",
+        items: ["Event planning", "SUS logistics", "Multiple project timelines"],
+    },
+    {
+        title: "Writing (Blog Format)",
+        description: "Clear and structured communication.",
+        items: ["Medium Articles", "Documentation", "Meeting Notes"],
+    },
+    {
+        title: "Photo and Video Editing",
+        description: "Creative and technical use of multimedia.",
+        items: ["Photos from high school", "Video from bio class"],
+    },
+    {
+        title: "Figma / Design Work",
+        description: "UI/UX mockups for team projects.",
+        items: ["SUS", "Donuts", "Hootsuite"],
+    },
+    {
+        title: "Presentation and Communication",
+        description: "Bridging technical insights for non-tech audiences.",
+        items: ["Hootsuite", "Trickster’s Hideout", "DraapeAI"],
+    },
+    {
+        title: "Creativity",
+        description: "Personal artistic expression and design work.",
+        items: ["Link to art portfolio 🎨"],
+    },
+];
 
-// function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
-//     return (
-//         <section id={id} className="bg-white rounded-2xl shadow p-8 mb-10">
-//         <h2 className="text-2xl font-semibold text-[#1428A0] mb-4">{title}</h2>
-//         {children}
-//         </section>
-//     );
-// }
+function TableOfContents({
+    sections,
+    activeSection,
+}: {
+    sections: Section[];
+    activeSection: string;
+}) {
+    const [visible, setVisible] = useState(true);
+    const inactivityTimer = useRef<NodeJS.Timeout | null>(null); // ✅ useRef
+
+    useEffect(() => {
+        const handleUserActivity = () => {
+        setVisible(true);
+
+        if (inactivityTimer.current) {
+            clearTimeout(inactivityTimer.current);
+        }
+
+        inactivityTimer.current = setTimeout(() => setVisible(false), 3000); // 3 sec
+        };
+
+        window.addEventListener("scroll", handleUserActivity);
+        window.addEventListener("mousemove", handleUserActivity);
+        handleUserActivity();
+
+        return () => {
+        window.removeEventListener("scroll", handleUserActivity);
+        window.removeEventListener("mousemove", handleUserActivity);
+        if (inactivityTimer.current) clearTimeout(inactivityTimer.current);
+        };
+    }, []);
+
+    return (
+        <aside
+        className={`hidden lg:flex flex-col fixed right-8 top-60 w-60 max-h-[80vh] overflow-y-auto bg-white rounded-xl p-4 z-50 transition-opacity duration-500 ${
+            visible ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        >
+        <h2 className="text-base font-semibold mb-4 text-gray-900 tracking-wide">
+            On This Page
+        </h2>
+
+        <ul className="space-y-2 text-sm text-gray-600">
+            {sections.map((section) => {
+            const id = section.title.toLowerCase().replace(/\s+/g, "-");
+            const isActive = activeSection === id;
+            return (
+                <li key={section.title}>
+                <a
+                    href={`#${id}`}
+                    className={`block px-2 py-1 rounded transition-all duration-300 ${
+                    isActive
+                        ? "text-[#1428A0] font-medium border-l-4 border-[#1428A0] bg-[#f0f4ff]"
+                        : "hover:text-[#1428A0] hover:bg-gray-100"
+                    }`}
+                >
+                    {section.title}
+                </a>
+                </li>
+            );
+            })}
+        </ul>
+        </aside>
+    );
+}
