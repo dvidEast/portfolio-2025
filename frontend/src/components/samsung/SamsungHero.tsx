@@ -35,12 +35,8 @@ export default function SamsungHero({
                         quickly, but also provides the depth needed if you want to explore further.
                         </p>
                         <p>
-                        I built this within a day to not only demonstrate the work itself, but also showcase my ability
-                        to design, code, and work quickly.
-                        </p>
-                        <p>
                         Rather than just following the job description, I reflected on my interview with Madison, Camille, and Trammy, and the moments
-                        that seemed to catch their interest.
+                        that seemed to catch their interest to pick my topics.
                         </p>
 
                         <p>Hope this helps!</p>
