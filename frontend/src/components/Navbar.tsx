@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Navbar() {
     return (
-        <nav className={'mt-10 pl-10 pr-10 flex flex-row justify-between items-center'}>
+        <nav className={'bg-transparent pt-10 pl-10 pr-10 flex flex-row justify-between items-center'}>
             <div className="flex gap-4 items-center">
 
                 <Link href='/'>DAVID LIM</Link>

@@ -5,6 +5,7 @@ import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
 import TechnicalSkills from "@/components/TechnicalSkills";
 import Projects from "@/components/Projects";
+import Navbar from "@/components/Navbar";
 
 const karla = Karla({
   subsets: ["latin"],
@@ -13,8 +14,10 @@ const karla = Karla({
 export default function Home() {
   return (
     <div
-      className={`${karla.className}`}
+      className={`${karla.className} bg-[#292A2C] text-white`}
     >
+      <Navbar />
+
       <Hero />
     
       <About />

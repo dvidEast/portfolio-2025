@@ -1,9 +1,6 @@
-import Navbar from "./Navbar"
-
 export default function Hero() {
     return(
         <>  
-            <Navbar />
             <main 
                 className={`h-screen flex flex-col justify-center items-center px-4 text-center opacity-0 animate-fade-slide-in`}
             >   

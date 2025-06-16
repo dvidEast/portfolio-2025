@@ -1,7 +1,7 @@
 import SamsungNavbar from "@/components/SamsungNavbar";
-import { Karla } from "next/font/google";
+import { Barlow } from "next/font/google";
 
-const karla = Karla({
+const barlow = Barlow({
     subsets: ["latin"],
 });
 
@@ -9,10 +9,10 @@ export default function SamsungCoopPortfolio() {
     return (
 
         <div
-            className={`${karla.className}`}
+            className={`page-light text-black ${barlow.className}`}
         >
             <SamsungNavbar />
-            
+
         </div>
         // <div className="bg-[#F4F6F9] text-[#1A1A1A] font-sans">
         //     <main className="max-w-6xl mx-auto px-6 py-12">
