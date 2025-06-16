@@ -25,7 +25,7 @@ export default function SamsungHero({
                         Hello to the hiring team at Samsung R&D Vancouver!
                     </h1>
                     <div className="text-lg space-y-4">
-                        <p>I’m David and I’m excited to show you some of my work with you.</p>
+                        <p>I’m David and I’m excited to share some of my work with you.</p>
                         <p>
                         While I was thinking about which links and portfolios to send over, I realized that none of
                         them truly captured everything in one place.
@@ -35,7 +35,7 @@ export default function SamsungHero({
                         quickly, but also provides the depth needed if you want to explore further.
                         </p>
                         <p>
-                        Rather than just following the job description, I reflected on my interview with Madison, Camille, and Trammy, and the moments
+                        I reflected on my interview with Madison, Camille, and Trammy, and the moments
                         that seemed to catch their interest to pick my topics.
                         </p>
 

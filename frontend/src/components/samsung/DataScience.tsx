@@ -74,7 +74,7 @@ const projects = [
         type: "draapeai",
         title: "Machine Learning & Data Cleaning",
         image: "/project_images/draapeAI.jpg",
-        description: "Focused on the data science pipeline for a body measurement prediction system, where I collaborated on developing and refining machine learning models to infer accurate body dimensions from user images. Leveraged user input and image data to improve prediction accuracy, conducted error analysis, and optimized preprocessing steps.",
+        description: "Focused on the data science pipeline for a body measurement prediction system, where I collaborated on developing and refining machine learning models to infer accurate body dimensions from user images. In addition, I leveraged user input and image data to improve prediction accuracy, conducted error analysis, and optimized preprocessing steps.",
     },
     {
         type: "Science undergraduate Society",
