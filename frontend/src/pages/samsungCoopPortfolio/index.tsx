@@ -51,52 +51,51 @@ export default function SamsungCoopPortfolio() {
             <SamsungNavbar />
 
             {/* Hero + TOC */}
-            <section className="flex flex-col lg:flex-row gap-12 items-start justify-between px-6 md:px-20 py-20 bg-gradient-to-br from-white to-gray-100">
+            <section className="flex flex-col border-t border-[#D3D3D3] lg:flex-row gap-12 items-start justify-between px-6 md:px-20 py-20 bg-gradient-to-br from-white to-gray-100">
                 {/* TOC */}
                 <TableOfContents sections={sections} activeSection={activeSection} />
 
-                <div className="max-w-5xl">
+                {/* Text + Optional Image */}
+                <div className="w-full max-w-screen-xl">
                     <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                         Hello to the hiring team at Samsung R&D Vancouver!
-                    </h1>    
-                
+                    </h1>
+
                     {/* Hero Text */}
-                    <div className="max-w-3xl">
-                        <p className="text-lg mb-4">
-                            I’m David and I’m excited to show you some of my work with you.
-                        </p>
-                        <p className="text-lg mb-4">
-                            While I was thinking about which links and portfolios to send over, I
-                            realized that none of them truly captured everything in one place.
-                        </p>
-                        <p className="text-lg mb-4">
-                            So I created this page to highlight the most relevant work in a format
-                            that’s easy to skim quickly, but also provides the depth needed if you
-                            want to explore further.
-                        </p>
-                        <p className="text-lg mb-4">
-                            I built this within a day to not only demonstrate the work itself, but
-                            also showcase my ability to design, code, and move fast.
-                        </p>
-                        <p className="text-lg mb-4">
-                            Rather than just following the job description for what may be relevant,
-                            I reflected on our interviews and the moments that seemed to catch your
-                            interest. Based on that, I organized my portfolio into themes (see below)!
-                        </p>
+                    <div className="text-lg space-y-4">
+                    <p>I’m David and I’m excited to show you some of my work with you.</p>
+                    <p>
+                        While I was thinking about which links and portfolios to send over, I realized that none of them
+                        truly captured everything in one place.
+                    </p>
+                    <p>
+                        So I created this page to highlight the most relevant work in a format that’s easy to skim quickly,
+                        but also provides the depth needed if you want to explore further.
+                    </p>
+                    <p>
+                        I built this within a day to not only demonstrate the work itself, but also showcase my ability to
+                        design, code, and move fast.
+                    </p>
+                    <p>
+                        Rather than just following the job description for what may be relevant, I reflected on our
+                        interviews and the moments that seemed to catch your interest. Based on that, I organized my
+                        portfolio into themes (see below)!
+                    </p>
                     </div>
                 </div>
 
                 {/* Hero Image */}
-                <div className="w-full max-w-md mb-10 lg:mb-0">
+                <div className="hidden lg:block w-full max-w-md mb-10 lg:mb-0">
                     <Image
-                        src="/samsung/samsung-hero.png"
-                        alt="Samsung Hero"
-                        width={500}
-                        height={500}
-                        className="rounded-full"
+                    src="/samsung/samsung-hero.png"
+                    alt="Samsung Hero"
+                    width={500}
+                    height={500}
+                    className="rounded-full"
                     />
                 </div>
             </section>
+
 
             {/* Section Content */}
             {sections.map((section) => {
@@ -189,17 +188,17 @@ function TableOfContents({
     activeSection: string;
 }) {
     const [visible, setVisible] = useState(true);
-    const inactivityTimer = useRef<NodeJS.Timeout | null>(null); // ✅ useRef
+    const inactivityTimer = useRef<NodeJS.Timeout | null>(null); 
 
     useEffect(() => {
         const handleUserActivity = () => {
-        setVisible(true);
+            setVisible(true);
 
-        if (inactivityTimer.current) {
-            clearTimeout(inactivityTimer.current);
-        }
+            if (inactivityTimer.current) {
+                clearTimeout(inactivityTimer.current);
+            }
 
-        inactivityTimer.current = setTimeout(() => setVisible(false), 3000); // 3 sec
+            inactivityTimer.current = setTimeout(() => setVisible(false), 3000); 
         };
 
         window.addEventListener("scroll", handleUserActivity);
@@ -207,23 +206,23 @@ function TableOfContents({
         handleUserActivity();
 
         return () => {
-        window.removeEventListener("scroll", handleUserActivity);
-        window.removeEventListener("mousemove", handleUserActivity);
-        if (inactivityTimer.current) clearTimeout(inactivityTimer.current);
+            window.removeEventListener("scroll", handleUserActivity);
+            window.removeEventListener("mousemove", handleUserActivity);
+            if (inactivityTimer.current) clearTimeout(inactivityTimer.current);
         };
     }, []);
 
     return (
         <aside
-        className={`hidden lg:flex flex-col fixed right-8 top-60 w-60 max-h-[80vh] overflow-y-auto bg-white rounded-xl p-4 z-50 transition-opacity duration-500 ${
-            visible ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+            className={`hidden lg:flex flex-col fixed right-20 top-55 w-60 max-h-[80vh] overflow-y-auto bg-white rounded-xl p-4 z-50 transition-opacity duration-500 ${
+                visible ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
         >
         <h2 className="text-base font-semibold mb-4 text-gray-900 tracking-wide">
-            On This Page
+            Relevant Experience
         </h2>
 
-        <ul className="space-y-2 text-sm text-gray-600">
+        <ul className="space-y-4 text-sm text-gray-600">
             {sections.map((section) => {
             const id = section.title.toLowerCase().replace(/\s+/g, "-");
             const isActive = activeSection === id;
@@ -231,9 +230,9 @@ function TableOfContents({
                 <li key={section.title}>
                 <a
                     href={`#${id}`}
-                    className={`block px-2 py-1 rounded transition-all duration-300 ${
+                    className={`block px-2 py-1 rounded transition-all font-bold duration-300 ${
                     isActive
-                        ? "text-[#1428A0] font-medium border-l-4 border-[#1428A0] bg-[#f0f4ff]"
+                        ? "text-[#2138e3] font-medium border-l-4 border-[#2138e3] bg-[#f0f4ff]"
                         : "hover:text-[#1428A0] hover:bg-gray-100"
                     }`}
                 >
