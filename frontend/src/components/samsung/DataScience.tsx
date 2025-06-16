@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, ExternalLink } from "lucide-react";
+import { Github } from "lucide-react";
 
 export default function DataScienceSection({
     sectionRefs,

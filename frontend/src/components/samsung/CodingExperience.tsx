@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { Github, ExternalLink } from "lucide-react";
 
 export default function CodingExperienceSection({
