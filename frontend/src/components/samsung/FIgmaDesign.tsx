@@ -2,7 +2,7 @@
 
 import { ExternalLink } from "lucide-react";
 
-export default function DesignWorkSection({
+export default function FigmaDesignWorkSection({
     sectionRefs,
 }: {
     sectionRefs: React.MutableRefObject<Record<string, HTMLElement | null>>;
@@ -15,7 +15,7 @@ export default function DesignWorkSection({
             ref={(el) => {
                 if (el) sectionRefs.current[id] = el;
             }}
-            className="px-6 md:px-20 py-24 bg-gradient-to-br from-white to-gray-50"
+            className="px-6 md:px-20 py-30 bg-gradient-to-br from-white to-gray-50"
         >
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl font-bold mb-8">Figma / Design Work</h2>
@@ -65,27 +65,27 @@ export default function DesignWorkSection({
 
 const designs = [
     {
-        title: "SUS Website Redesign",
-        type: "Responsive UI / Figma Prototype",
-        image: "/figma/sus-redesign.png",
-        description:
-            "Redesigned the Science Undergraduate Society website to modernize the interface and streamline navigation. Focused on mobile-first layout and consistent visual language.",
-        link: "https://www.figma.com/file/example1",
-    },
-    {
         title: "Donuts Social App",
         type: "Branding / Mobile UI",
-        image: "/figma/donuts-app.png",
+        image: "/project_images/donuts.png",
         description:
             "Created mockups for a student connection app with a Gen-Z aesthetic. Emphasized personalization, clean typography, and swipe-based interactions.",
-        link: "https://www.figma.com/file/example2",
+        link: "https://www.figma.com/design/EcgTTvwZEsEmCmT3zDT7C5/UBC-Donut--Copy-?node-id=0-1&t=OZng1PBKSkdZ3wTL-1",
     },
     {
         title: "Hootsuite Hackathon Submission",
         type: "Presentation Mockup",
-        image: "/figma/hootsuite.png",
+        image: "/project_images/hootsuite_product_challenge.png",
         description:
-            "Designed the full deck and product interface shown at the Hootsuite Product Challenge. Prioritized storytelling through color, layout, and clear information flow.",
-        link: "https://www.figma.com/file/example3",
+            "Designed the product interface shown at the Hootsuite Product Challenge. Prioritized storytelling through color, layout, and clear information flow.",
+        link: "https://www.figma.com/proto/TcKKwrfVPJs8Pdx0OhgP4I/Hootsuite-Nest?node-id=0-1&t=TZSaSNz9KqBdUBSw-1",
+    },
+    {
+        title: "SUS Website Redesign",
+        type: "Responsive UI / Figma Prototype",
+        image: "/project_images/sus_mock.png",
+        description:
+            "Redesigned the Science Undergraduate Society website to modernize the interface and streamline navigation. Focused on mobile-first layout and consistent visual language.",
+        link: "https://www.figma.com/design/A3pYclBHr43mbJGirYjLZI/SUS-Markup?node-id=0-1&t=VrpvZwbxIDGWDZ1g-1",
     },
 ];

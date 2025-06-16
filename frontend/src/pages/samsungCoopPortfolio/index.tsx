@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import SamsungHero from "@/components/samsung/SamsungHero";
 import DataScienceSection from "@/components/samsung/DataScience";
 import CodingExperienceSection from "@/components/samsung/CodingExperience";
+import FigmaDesignWorkSection from "@/components/samsung/FIgmaDesign";
 
 type Section = {
     title: string;
@@ -37,18 +38,8 @@ const sections: Section[] = [
         "KingsCraft, Donuts",
         ],
     },
-    // {
-    //     title: "Writing (Blog Format)",
-    //     description: "Clear and structured communication.",
-    //     items: ["Medium Articles", "Documentation", "Meeting Notes"],
-    // },
-    // {
-    //     title: "Photo and Video Editing",
-    //     description: "Creative and technical use of multimedia.",
-    //     items: ["Photos from high school", "Video from bio class"],
-    // },
     {
-        title: "Figma / Design Work",
+        title: "Figma Design Work",
         description: "UI/UX mockups for team projects.",
         items: ["SUS", "Donuts", "Hootsuite"],
     },
@@ -111,8 +102,7 @@ export default function SamsungCoopPortfolio() {
             {/* Section Blocks */}
             <DataScienceSection sectionRefs={sectionRefs} />
             <CodingExperienceSection sectionRefs={sectionRefs} />
-
-
+            <FigmaDesignWorkSection sectionRefs={sectionRefs} />
         </div>
     );
 }

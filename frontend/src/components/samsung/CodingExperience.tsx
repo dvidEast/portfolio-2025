@@ -16,7 +16,7 @@ export default function CodingExperienceSection({
             ref={(el) => {
                 if (el) sectionRefs.current[id] = el;
             }}
-            className="px-6 md:px-20 py-16 bg-gray-100 mb-40 pt-27"
+            className="px-6 md:px-20 py-30 bg-gray-100"
         >
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold mb-6">Coding Experience</h2>
