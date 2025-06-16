@@ -7,7 +7,7 @@ export default function DataScienceSection({
 }: {
     sectionRefs: React.MutableRefObject<Record<string, HTMLElement | null>>;
 }) {
-    const id = "data-science,-seo-and-marketing";
+    const id = "data-science-/-analytics";
 
     return (
         <section
@@ -15,12 +15,15 @@ export default function DataScienceSection({
             ref={(el) => {
                 if (el) sectionRefs.current[id] = el;
             }}
-            className="px-6 md:px-20 py-16 mb-40"
+            className="px-6 md:px-20 py-16 mb-20 mt-10"
         >
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold mb-6">Data Science / Analytics</h2>
+                <p className="text-gray-700 mb-4 text-lg">
+                    I’m currently pursuing a <span className="font-semibold text-black">B.Sc. in Mathematics</span> with a <span className="font-semibold text-black">minor in Data Science</span> at the University of British Columbia, where I focus on the theoretical foundations of data — including machine learning, statistics, and algorithmic modeling.
+                </p>
                 <p className="text-gray-700 mb-8 text-lg">
-                Relevant technical and strategic projects.
+                    Below are a few projects where I applied these concepts in real-world settings, from user analytics to machine learning pipelines and SEO optimization.
                 </p>
                 <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 

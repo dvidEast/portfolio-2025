@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import SamsungHero from "@/components/samsung/SamsungHero";
 import DataScienceSection from "@/components/samsung/DataScience";
-import TimeManagementSection from "@/components/samsung/TimeManagement";
 import CodingExperienceSection from "@/components/samsung/CodingExperience";
 
 type Section = {
@@ -19,7 +18,7 @@ const sections: Section[] = [
         items: [],
     },
     {
-        title: "Data Science, SEO and Marketing",
+        title: "Data Science / Analytics",
         description: "Relevant technical and strategic projects.",
         items: [
         "Major in Mathematics",
@@ -38,21 +37,16 @@ const sections: Section[] = [
         "KingsCraft, Donuts",
         ],
     },
-    {
-        title: "Time and Priority Management",
-        description: "Organizing and managing cross-functional tasks.",
-        items: ["Event planning", "SUS logistics", "Multiple project timelines"],
-    },
-    {
-        title: "Writing (Blog Format)",
-        description: "Clear and structured communication.",
-        items: ["Medium Articles", "Documentation", "Meeting Notes"],
-    },
-    {
-        title: "Photo and Video Editing",
-        description: "Creative and technical use of multimedia.",
-        items: ["Photos from high school", "Video from bio class"],
-    },
+    // {
+    //     title: "Writing (Blog Format)",
+    //     description: "Clear and structured communication.",
+    //     items: ["Medium Articles", "Documentation", "Meeting Notes"],
+    // },
+    // {
+    //     title: "Photo and Video Editing",
+    //     description: "Creative and technical use of multimedia.",
+    //     items: ["Photos from high school", "Video from bio class"],
+    // },
     {
         title: "Figma / Design Work",
         description: "UI/UX mockups for team projects.",
@@ -103,22 +97,22 @@ export default function SamsungCoopPortfolio() {
     return (
         <div className="bg-white text-black font-sans scroll-smooth">
 
-        {/* Hero Section */}
+            {/* Hero Section */}
 
-        <TableOfContents
-            sections={sections}
-            activeSection={activeSection}
-            tocOpen={tocOpen}
-            setTocOpen={setTocOpen}
-        />
+            <TableOfContents
+                sections={sections}
+                activeSection={activeSection}
+                tocOpen={tocOpen}
+                setTocOpen={setTocOpen}
+            />
 
-        <SamsungHero sectionRefs={sectionRefs} />
+            <SamsungHero sectionRefs={sectionRefs} />
 
-        {/* Section Blocks */}
-        <DataScienceSection sectionRefs={sectionRefs} />
-        <CodingExperienceSection sectionRefs={sectionRefs} />
-        <TimeManagementSection sectionRefs={sectionRefs} />
-        {/* Add other section components here (WritingSection, CreativitySection, etc.) */}
+            {/* Section Blocks */}
+            <DataScienceSection sectionRefs={sectionRefs} />
+            <CodingExperienceSection sectionRefs={sectionRefs} />
+
+
         </div>
     );
 }

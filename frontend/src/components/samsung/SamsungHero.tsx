@@ -36,7 +36,7 @@ export default function SamsungHero({
                         </p>
                         <p>
                         I built this within a day to not only demonstrate the work itself, but also showcase my ability
-                        to design, code, and move fast.
+                        to design, code, and work quickly.
                         </p>
                         <p>
                         Rather than just following the job description, I reflected on our interviews and the moments

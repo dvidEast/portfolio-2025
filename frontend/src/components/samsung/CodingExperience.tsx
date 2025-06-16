@@ -16,59 +16,61 @@ export default function CodingExperienceSection({
             ref={(el) => {
                 if (el) sectionRefs.current[id] = el;
             }}
-            className="px-6 md:px-20 py-16 bg-gray-100 mb-40"
+            className="px-6 md:px-20 py-16 bg-gray-100 mb-40 pt-27"
         >
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold mb-6">Coding Experience</h2>
-                <p className="text-gray-700 mb-8 text-lg">
-                Relevant technical and strategic projects.
+                
+                <p className="text-gray-700 mb-8 text-m">
+                    I've led and contributed to full-stack development projects across both web and mobile platforms using <span className="text-[black] font-semibold">JavaScript, HTML, and CSS</span>, with a focus on clean UI/UX, data integration, and <span className="font-semibold text-black">performance optimization</span>. My work includes building <span className="font-semibold text-black">internal tools</span> and dashboards, implementing <span className="font-semibold text-black">content pipelines</span>, and supporting <span className="font-semibold text-black">analytics and SEO tracking</span> using platforms like <span className="font-semibold text-[black]">Google Analytics</span> and <span className="font-semibold text-[black]">Semrush</span>—all aligned with <span className="font-semibold text-black">business needs</span> and <span className="font-semibold text-black">stakeholder goals</span>.
                 </p>
+
                 <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                {projects.map((project, idx) => (
-                    <div
-                    key={idx}
-                    className="flex flex-col bg-white shadow-md rounded-xl overflow-hidden border hover:shadow-lg transition-shadow"
-                    >
-                    <div className="w-full h-48 overflow-hidden">
-                        <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                        />
-                    </div>
-                    <div className="p-5 flex flex-col flex-grow">
-                        <h3 className="text-xs font-semibold text-gray-600 uppercase mb-1">
-                        {project.title.toUpperCase()}
-                        </h3>
-                        <h2 className="text-xl font-bold text-black mb-3">
-                        {project.description.substring(0, 50)}...
-                        </h2>
-                        <p className="text-sm text-gray-600 flex-grow">
-                        {project.description}
-                        </p>
-                        <div className="flex items-center gap-4 mt-4">
-                        {project.github && (
-                            <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >
-                            <Github className="w-5 h-5 hover:text-gray-600 transition" />
-                            </a>
-                        )}
-                        {project.devpost && (
-                            <a
-                            href={project.devpost}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >
-                            <ExternalLink className="w-5 h-5 hover:text-gray-600 transition" />
-                            </a>
-                        )}
+                    {projects.map((project, idx) => (
+                        <div
+                            key={idx}
+                            className="flex flex-col bg-white shadow-md rounded-xl overflow-hidden border border-[#D3D3D3] hover:shadow-lg transition-shadow"
+                        >
+                            <div className="w-full h-48 overflow-hidden">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div className="p-5 flex flex-col flex-grow">
+                                <h3 className="text-xs font-semibold text-gray-600 uppercase mb-1">
+                                {project.title.toUpperCase()}
+                                </h3>
+                                <h2 className="text-xl font-bold text-black mb-3">
+                                {project.description.substring(0, 50)}...
+                                </h2>
+                                <p className="text-sm text-gray-600 flex-grow">
+                                {project.description}
+                                </p>
+                                <div className="flex items-center gap-4 mt-4">
+                                {project.github && (
+                                    <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >
+                                    <Github className="w-5 h-5 hover:text-gray-600 transition" />
+                                    </a>
+                                )}
+                                {project.devpost && (
+                                    <a
+                                    href={project.devpost}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >
+                                    <ExternalLink className="w-5 h-5 hover:text-gray-600 transition" />
+                                    </a>
+                                )}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    </div>
-                ))}
+                    ))}
                 </div>
             </div>
         </section>
