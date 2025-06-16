@@ -7,7 +7,7 @@ export default function DataScienceSection({
 }: {
     sectionRefs: React.MutableRefObject<Record<string, HTMLElement | null>>;
 }) {
-    const id = "data-science-/-analytics";
+    const id = "data-science-analytics";
 
     return (
         <section
@@ -15,7 +15,7 @@ export default function DataScienceSection({
             ref={(el) => {
                 if (el) sectionRefs.current[id] = el;
             }}
-            className="px-6 md:px-20 py-30"
+            className="px-6 md:px-20 py-40 "
         >
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold mb-6">Data Science / Analytics</h2>
@@ -41,10 +41,10 @@ export default function DataScienceSection({
                     </div>
                     <div className="p-5 flex flex-col flex-grow">
                         <h3 className="text-xs font-semibold text-gray-600 uppercase mb-1">
-                        {project.title.toUpperCase()}
+                        {project.type.toUpperCase()}
                         </h3>
-                        <h2 className="text-xl font-bold text-black mb-3">
-                        {project.description.substring(0, 50)}...
+                        <h2 className="text-xl font-bold text-black mt-1 mb-3">
+                        {project.title}
                         </h2>
                         <p className="text-sm text-gray-600 flex-grow">
                         {project.description}
@@ -70,20 +70,23 @@ export default function DataScienceSection({
 }
 
 const projects = [
-    {
-        title: "WEATHER CLASSIFICATION",
-        image: "/project_images/weather_classification.webp",
-        description: "Used machine learning to predict weather outcomes based on features from a Kaggle weather dataset.",
-        github: "https://github.com/dvidEast/dsci_weather_classification",
+    {   
+        type: "draapeai",
+        title: "Machine Learning & Data Cleaning",
+        image: "/project_images/draapeAI.jpg",
+        description: "Focused on the data science pipeline for a body measurement prediction system, where I collaborated on developing and refining machine learning models to infer accurate body dimensions from user images. Leveraged user input and image data to improve prediction accuracy, conducted error analysis, and optimized preprocessing steps.",
     },
     {
-        title: "SCIENCE UNDERGRADUATE SOCIETY WEBSITE ANALYTICS / SEO",
+        type: "Science undergraduate Society",
+        title: "Website Analytics & SEO",
         image: "/project_images/sus_mock.png",
         description: "Implemented Google Analytics to track and visualize user behavior, enabling data-driven iterations and performance monitoring. Led SEO optimization using Semrush to identify high-impact keywords, audit site structure, and benchmark performance. Combined technical implementation with strategic insight to enhance search visibility and drive meaningful engagement.",
     },
     {
-        title: "DRAAPEAI",
-        image: "/project_images/draapeAI.jpg",
-        description: "Focused on the data science pipeline for a body measurement prediction system, where I collaborated on developing and refining machine learning models to infer accurate body dimensions from user images. Leveraged user input and image data to improve prediction accuracy, conducted error analysis, and optimized preprocessing steps.",
+        type: "Classification",
+        title: "Data Classification",
+        image: "/project_images/weather_classification.webp",
+        description: "Used clustering in R to predict weather outcomes based on features from a Kaggle weather dataset.",
+        github: "https://github.com/dvidEast/dsci_weather_classification",
     },
 ];

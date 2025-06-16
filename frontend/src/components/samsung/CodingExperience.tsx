@@ -16,13 +16,19 @@ export default function CodingExperienceSection({
             ref={(el) => {
                 if (el) sectionRefs.current[id] = el;
             }}
-            className="px-6 md:px-20 py-30 bg-gray-100"
+            className="px-6 md:px-20 py-40 bg-gray-100"
         >
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold mb-6">Coding Experience</h2>
-                
+
                 <p className="text-gray-700 mb-8 text-m">
-                    I've led and contributed to full-stack development projects across both web and mobile platforms using <span className="text-[black] font-semibold">JavaScript, HTML, and CSS</span>, with a focus on clean UI/UX, data integration, and <span className="font-semibold text-black">performance optimization</span>. My work includes building <span className="font-semibold text-black">internal tools</span> and dashboards, implementing <span className="font-semibold text-black">content pipelines</span>, and supporting <span className="font-semibold text-black">analytics and SEO tracking</span> using platforms like <span className="font-semibold text-[black]">Google Analytics</span> and <span className="font-semibold text-[black]">Semrush</span>—all aligned with <span className="font-semibold text-black">business needs</span> and <span className="font-semibold text-black">stakeholder goals</span>.
+                    I’ve contributed to full-stack projects across web and mobile platforms using{" "}
+                    <span className="font-semibold text-black">TypeScript, JavaScript, HTML, CSS, and React</span>. My work spans{" "}
+                    <span className="font-semibold text-black">UI/UX design, data integrations, content pipelines</span>, and{" "}
+                    <span className="font-semibold text-black">SEO analytics</span> via tools like{" "}
+                    <span className="font-semibold text-black">Google Analytics</span> and{" "}
+                    <span className="font-semibold text-black">Semrush</span>, always aligned with{" "}
+                    <span className="font-semibold text-black">business goals and stakeholder needs</span>.
                 </p>
 
                 <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -40,33 +46,35 @@ export default function CodingExperienceSection({
                             </div>
                             <div className="p-5 flex flex-col flex-grow">
                                 <h3 className="text-xs font-semibold text-gray-600 uppercase mb-1">
-                                {project.title.toUpperCase()}
+                                    {project.title.toUpperCase()}
                                 </h3>
-                                <h2 className="text-xl font-bold text-black mb-3">
-                                {project.description.substring(0, 50)}...
+                                <h2 className="text-lg font-bold text-black mb-2">
+                                    {project.description}
                                 </h2>
-                                <p className="text-sm text-gray-600 flex-grow">
-                                {project.description}
-                                </p>
-                                <div className="flex items-center gap-4 mt-4">
-                                {project.github && (
-                                    <a
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >
-                                    <Github className="w-5 h-5 hover:text-gray-600 transition" />
-                                    </a>
+                                {project.tech && (
+                                    <p className="text-sm text-gray-500 italic mb-2">
+                                        Tech used: {project.tech}
+                                    </p>
                                 )}
-                                {project.devpost && (
-                                    <a
-                                    href={project.devpost}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >
-                                    <ExternalLink className="w-5 h-5 hover:text-gray-600 transition" />
-                                    </a>
-                                )}
+                                <div className="flex items-center gap-4 mt-auto">
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <Github className="w-5 h-5 hover:text-gray-600 transition" />
+                                        </a>
+                                    )}
+                                    {project.devpost && (
+                                        <a
+                                            href={project.devpost}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <ExternalLink className="w-5 h-5 hover:text-gray-600 transition" />
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -79,24 +87,25 @@ export default function CodingExperienceSection({
 
 const projects = [
     {
-        title: "WEATHER CLAS",
+        title: "StormHacks 2024 – Winner",
         image: "/project_images/kings_craft.png",
-        description:
-        "ML application that takes 2D photos and generate 3D images (OBJ file) by generating unseen angles.",
+        description: "Kings Craft – Predicting 3D objects from 2D images using photogammetry and ML.",
+        tech: "ReactJS, AWS, JavaScript, HTML, CSS",
         github: "https://github.com/koh3n/KINGSCRAFT",
         devpost: "https://devpost.com/software/kings-craft",
     },
     {
-        title: "DONUTS",
+        title: "School Project",
         image: "/project_images/donuts.png",
-        description:
-        "Web app that facilitates small group and 1-on-1 meeting matches based on shared availability.",
+        description: "Donut Date – Matchmaking app for small group and 1-on-1 meetups.",
+        tech: "React, TypeScript, Node.js, Oracle, SQL, Express, HTML, CSS",
         github: "https://github.com/naijwu/donut",
     },
     {
-        title: "NWHACKS 2024",
+        title: "nwHacks 2024",
         image: "/project_images/panda_ai.png",
-        description: "ML application that tracks your hands to keep you off your phone.",
+        description: "PandAI – Tracks hand motion to reduce phone usage with ML.",
+        tech: "Python, TensorFlow, React, JavaScript, HTML, CSS",
         github: "https://github.com/dvidEast/nwHacks-Panda",
         devpost: "https://devpost.com/software/pandai",
     },

@@ -14,7 +14,7 @@ export default function SamsungHero({
             <SamsungNavbar />
             
             <section
-                className="flex flex-col border-t border-[#D3D3D3] lg:flex-row gap-20 items-start justify-between px-6 md:px-20 py-20 bg-gradient-to-br from-white to-gray-100"
+                className="flex flex-col border-t border-[#D3D3D3] lg:flex-row gap-20 items-start justify-between px-6 md:px-20 py-40 bg-gradient-to-br from-white to-gray-100"
                 id={id}
                 ref={(el) => {
                     if (el) sectionRefs.current[id] = el;
@@ -39,9 +39,11 @@ export default function SamsungHero({
                         to design, code, and work quickly.
                         </p>
                         <p>
-                        Rather than just following the job description, I reflected on our interviews and the moments
-                        that seemed to catch your interest.
+                        Rather than just following the job description, I reflected on my interview with Madison, Camille, and Trammy, and the moments
+                        that seemed to catch their interest.
                         </p>
+
+                        <p>Hope this helps!</p>
                     </div>
                 </div>
 

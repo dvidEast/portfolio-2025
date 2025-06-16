@@ -7,7 +7,7 @@ export default function FigmaDesignWorkSection({
 }: {
     sectionRefs: React.MutableRefObject<Record<string, HTMLElement | null>>;
 }) {
-    const id = "figma-/-design-work";
+    const id = "figma-design-work";
 
     return (
         <section
@@ -15,7 +15,7 @@ export default function FigmaDesignWorkSection({
             ref={(el) => {
                 if (el) sectionRefs.current[id] = el;
             }}
-            className="px-6 md:px-20 py-30 bg-gradient-to-br from-white to-gray-50"
+            className="px-6 md:px-20 py-40 bg-gradient-to-br from-white to-gray-50"
         >
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl font-bold mb-8">Figma / Design Work</h2>
