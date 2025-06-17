@@ -29,11 +29,11 @@ const artworks = [
         description: "A sketch for a friend—soft light, clean lines, and new beginnings.",
         imageUrl: "/artwork/renew.jpg",
     },
-    {
-        title: "Flesh and Bone",
-        description: "More than a skull—memento mori in black and white.",
-        imageUrl: "/artwork/skull.jpg",
-    },
+    // {
+    //     title: "Flesh and Bone",
+    //     description: "More than a skull—memento mori in black and white.",
+    //     imageUrl: "/artwork/skull.jpg",
+    // },
     {
         title: "Crowded",
         description: "A mind in motion. Chaotic, beautiful, overfull.",
