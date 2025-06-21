@@ -1,9 +1,10 @@
 # [davidlim.tech](https://www.davidlim.tech/)
 
-**This website serves as my personal portfolio, highlighting:**
+**My personal portfolio, containing:**
 - My professional experience
 - Key technical skills
 - Projects (Hackathons, Personal, School)
+- Artwork
 - Contact and social media links
 
 **Frontend:**  
