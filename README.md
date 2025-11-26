@@ -12,9 +12,6 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)  
 
-**Tessting:**
-- Jest
-
 **Deployment:**  
 - [Vercel](https://vercel.com/)
 - Gitub Actions
