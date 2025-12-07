@@ -8,7 +8,7 @@
 - Contact and social media links
 
 **Frontend:**  
-- [React](https://reactjs.org/) / [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/) / [Next.js](https://nextjs.org/) 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)  
 
