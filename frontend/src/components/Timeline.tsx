@@ -6,7 +6,7 @@ export default function Timeline() {
         {
             title: "BSc MATHEMATICS, MINOR DATA SCIENCE",
             subtitle: "University of British Columbia",
-            date: "2021 – Now",
+            date: "Sept 2021 – Now",
             bulletColor: "bg-yellow-400",
             details: [
                 "Science Undergraduate Society (SUS) ->",
@@ -18,9 +18,35 @@ export default function Timeline() {
             ],
         },
         {
+            title: "SECURITY SOFTWARE ENGINEER",
+            subtitle: "SAP",
+            date: "Sept 2025 – Now",
+            bulletColor: "bg-blue-400",
+            details: [
+                "Developed automation pipelines in Python, integrating SAST and OSS security scanners, and enabling continuous vulnerability reporting using Dockerized Jenkins agents for over 180 microservices and libraries across SAP.",
+                "Led the development of an automated “early-warning” security ticket alert system that surfaced high-risk alerts in real-time, reducing overdue tickets by 50% and improving SLA compliance benchmarks.",
+                "Conducted application security reviews by validating SAST-detected vulnerabilities across existing codebases.",
+                "Performed debugging on application scanning pipeline errors, ensuring accurate vulnerability classification and reducing application scanning pipeline errors by 25%.",
+                "Performed vulnerability analysis using BurpSuite to investigate race conditions in application features, producing remediation recommendations for respective code owners.",
+                "Published structured vulnerability findings to SQL databases to support security analytics teams.",
+                "Coordinated with KPI analytics, and global security teams to plan and execute annual security review cycles."
+            ],
+        },
+        {
+            title: "SOFTWARE DEVELOPMENT LEAD",
+            subtitle: "UBC Science Undergraduate Society",
+            date: "Jun 2024 – Now",
+            bulletColor: "bg-purple-400",
+            details: [
+                "Managed a team of 10 to design, build, and maintain the organization’s website using React (Next.js), TypeScript, and Figma, demonstrating strong team collaboration, technical proficiency, and leadership.",
+                "Overhauled website to better deliver resources for 16,000+ science students, resulting in a 30% increase in user engagement.",
+                "Developed the team’s Git workflow and CI/CD pipelines in Github Actions, ensured code reviews for quality, and maintained documentation for current and future development."
+            ],
+        },
+        {
             title: "SOFTWARE DEVELOPER",
             subtitle: "Trickster's Hideout",
-            date: "2025 - 2025",
+            date: "Mar 2025 - Apr 2025",
             bulletColor: "bg-red-400",
             details: [
                 "Contracted via Riipen to build a full-stack financial dashboard integrating sales data from Square, WordPress Events, and Eventbrite into a unified interface.",
@@ -30,21 +56,9 @@ export default function Timeline() {
             ],
         },
         {
-            title: "SOFTWARE DEVELOPMENT LEAD",
-            subtitle: "UBC Science Undergraduate Society",
-            date: "2024 – 2025",
-            bulletColor: "bg-blue-400",
-            details: [
-                "Proposed and led the migration of the organization’s website from WordPress to a React-based web application, improving developer flexibility and user accessibility.",
-                "The proposed initiative created more effective developer opportunities with industry-standard tools and learning experiences for students who pursuing software roles.",
-                "Managed a team of 6 developers to design, build, and maintain the new website using React (Next.js), TypeScript, and Tailwind CSS, delivering a modern and responsive UI/UX.",
-                "Enabled access to resources for over 16,000 UBC science undergraduates by leveraging modular components, React Hooks, and the Context API for efficient state management, resulting in a 30% increase in user engagement."
-            ],
-        },
-        {
             title: "SOFTWARE DEVELOPER",
             subtitle: "DraapeAI",
-            date: "2024 – 2024",
+            date: "May 2024 – Aug 2024",
             bulletColor: "bg-pink-400",
             details: [
                 "Developed a mobile app for a body measurement prediction system using React Native to capture user images and display body measurement data through a clean and accessible UI.",
