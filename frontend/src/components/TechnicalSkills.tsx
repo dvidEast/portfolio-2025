@@ -7,7 +7,7 @@ export default function TechnicalSkills() {
         {
             type: "LANGUAGES",
             list: [
-                "Python", "JavaScript", "Typescript", "Java", "C++", "SQL", "R", "ReactJS", "HTML", "CSS"
+                "Python", "JavaScript", "Typescript", "Java", "SQL", "R", "ReactJS", "HTML", "CSS"
             ]
         },
         {
@@ -19,13 +19,13 @@ export default function TechnicalSkills() {
         {
             type: "TESTING",
             list: [
-                "Jest", "JUnit", "Postman Collections", "GitLab", "Selenium"
+                "Jest", "JUnit", "Postman Collections"
             ]
         },
         {
             type: "DEV TOOLS",
             list: [
-                "Git", "GitHub", "Docker", "AWS", "Jupyter", "Postman"
+                "Git", "GitHub", "Docker", "AWS", "Jupyter", "Postman", "Jenkins"
             ]
         },
         {
