@@ -18,9 +18,17 @@ export default function Timeline() {
             ],
         },
         {
-            title: "SECURITY SOFTWARE ENGINEER",
+            title: "SOFTWARE DEVELOPER CO-OP",
             subtitle: "SAP",
-            date: "Sept 2025 – Now",
+            date: "May 2026 – Now",
+            bulletColor: "bg-sky-300",
+            details: [
+            ],
+        },
+        {
+            title: "SECURITY SOFTWARE ENGINEER CO-OP",
+            subtitle: "SAP",
+            date: "Sept 2025 – April 2026",
             bulletColor: "bg-blue-400",
             details: [
                 "Developed automation pipelines in Python, integrating SAST and OSS security scanners, and enabling continuous vulnerability reporting using Dockerized Jenkins agents for over 180 microservices and libraries across SAP.",
