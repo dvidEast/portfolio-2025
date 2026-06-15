@@ -19,7 +19,7 @@ export default function Timeline() {
         },
         {
             title: "SOFTWARE DEVELOPER CO-OP",
-            subtitle: "SAP",
+            subtitle: "CLIO",
             date: "May 2026 – Now",
             bulletColor: "bg-sky-300",
             details: [
